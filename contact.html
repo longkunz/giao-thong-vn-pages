@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Liên hệ hỗ trợ và gửi góp ý cho ứng dụng Giao Thông VN Live.">
+  <title>Liên hệ & Góp ý - Giao Thông VN Live</title>
+  <style>
+    :root { color-scheme: light dark; --bg:#f8fafc; --card:#fff; --text:#0f172a; --muted:#475569; --border:#e2e8f0; --accent:#1d4ed8; }
+    @media(prefers-color-scheme:dark) { :root { --bg:#000; --card:#111; --text:#f8fafc; --muted:#cbd5e1; --border:#333; --accent:#93c5fd; } }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.65 system-ui,sans-serif; }
+    main { max-width:680px; margin:auto; padding:32px 20px; }
+    .brand { color:var(--muted); font-weight:600; }
+    h1 { font-size:clamp(1.6rem,6vw,2rem); line-height:1.25; margin:12px 0; }
+    h2 { font-size:1.15rem; margin:0 0 12px; }
+    section { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:24px; margin:24px 0; }
+    a { color:var(--accent); overflow-wrap:anywhere; }
+    .email { display:inline-flex; align-items:center; min-height:48px; padding:10px 16px; border:1px solid var(--border); border-radius:10px; font-weight:600; }
+    li { margin:8px 0; }
+    ul { padding-left:22px; }
+    .note,footer { color:var(--muted); font-size:.9rem; }
+    a:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="brand">Giao Thông VN Live</p>
+    <h1>Liên hệ & Góp ý</h1>
+    <p>Bạn cần hỗ trợ khi sử dụng ứng dụng hoặc muốn đề xuất cải tiến? Hãy gửi thông tin qua email bên dưới.</p>
+    <section aria-labelledby="support-title">
+      <h2 id="support-title">Gửi yêu cầu hỗ trợ</h2>
+      <a class="email" href="mailto:support@vietmap.vn?subject=G%C3%B3p%20%C3%BD%20Giao%20Th%C3%B4ng%20VN%20Live">support@vietmap.vn</a>
+      <p class="note">Nút trên mở ứng dụng email của thiết bị. Bạn cũng có thể sao chép địa chỉ để gửi thư.</p>
+    </section>
+    <section aria-labelledby="details-title">
+      <h2 id="details-title">Thông tin giúp xử lý nhanh hơn</h2>
+      <ul>
+        <li>Phiên bản ứng dụng, dòng điện thoại và phiên bản iOS hoặc Android.</li>
+        <li>Mô tả vấn đề, các bước thực hiện và kết quả bạn mong muốn.</li>
+        <li>Nếu liên quan đến camera: tên camera, quận/huyện và thời điểm gặp lỗi.</li>
+        <li>Ảnh minh họa nếu cần; hãy che thông tin cá nhân trước khi gửi.</li>
+      </ul>
+      <p class="note">Không gửi mật khẩu, khóa API hoặc thông tin thanh toán qua email.</p>
+    </section>
+    <footer><a href="terms.html">Điều khoản sử dụng & Chính sách bảo mật</a></footer>
+  </main>
+</body>
+</html>
