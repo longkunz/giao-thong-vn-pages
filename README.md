@@ -6,6 +6,7 @@ Kho lưu trữ công khai chứa tài liệu điều khoản sử dụng, chính
 
 - **Trang chủ / Điều khoản dịch vụ:** [https://longkunz.github.io/giao-thong-vn-pages/](https://longkunz.github.io/giao-thong-vn-pages/)
 - **Đường dẫn trực tiếp Điều khoản:** [https://longkunz.github.io/giao-thong-vn-pages/terms.html](https://longkunz.github.io/giao-thong-vn-pages/terms.html)
+- **Liên hệ & Góp ý:** [https://longkunz.github.io/giao-thong-vn-pages/contact.html](https://longkunz.github.io/giao-thong-vn-pages/contact.html)
 
 ## 2. Thông số kỹ thuật
 
