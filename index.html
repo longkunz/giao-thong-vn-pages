@@ -285,7 +285,7 @@
         <li><strong>Lịch sử tra cứu biển số (Vehicle Query History):</strong> Các biển số phương tiện đã tra cứu chỉ được lưu trong bộ nhớ máy của người dùng nhằm hỗ trợ điền nhanh lần sau.</li>
         <li><strong>Tùy chọn giao diện (Theme Mode):</strong> Lựa chọn hiển thị Sáng, Tối hoặc Tự động theo Hệ thống được lưu cục bộ trên máy.</li>
         <li><strong>Ghi nhận đồng ý điều khoản:</strong> Dấu thời gian (timestamp) và mã định danh nội dung điều khoản được lưu trên thiết bị sau khi người dùng chủ động bấm đồng ý.</li>
-        <li><strong>Quyền vị trí địa lý (GPS Location):</strong> Chỉ được yêu cầu khi người dùng chủ động mở bản đồ hoặc tra cứu camera lân cận (Near-me). Dữ liệu vị trí chỉ xử lý trực tiếp trên thiết bị để hiển thị khoảng cách, hoàn toàn không được theo dõi ngầm trong nền hoặc truyền về máy chủ để định danh người dùng.</li>
+        <li><strong>Quyền vị trí địa lý (GPS Location):</strong> Chỉ được yêu cầu khi người dùng chủ động mở bản đồ hoặc tra cứu camera lân cận (Near-me). Tọa độ (vĩ độ, kinh độ) được truyền qua kết nối an toàn HTTPS tới máy chủ ứng dụng (/api/cameras) chỉ nhằm mục đích tính toán khoảng cách, lọc và sắp xếp camera giao thông xung quanh; máy chủ không lưu trữ dữ liệu vị trí, không ghi nhận lịch sử di chuyển, không định danh người dùng và hoàn toàn không thu thập ngầm trong nền.</li>
       </ul>
       <p>
         Khi người dùng gỡ bỏ ứng dụng hoặc xóa dữ liệu bộ nhớ ứng dụng trên hệ điều hành, toàn bộ dữ liệu lưu trữ cục bộ nói trên sẽ tự động bị xóa.
