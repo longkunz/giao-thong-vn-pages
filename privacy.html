@@ -119,7 +119,7 @@
     </section>
 
     <section>
-      <h2>3. Dữ liệu gửi lên máy chủ khi bạn sử dụng tính năng</h2>
+      <h2>3. Dữ liệu gửi lên máy chủ khi bạn sử dụng tính năng (và bên thứ ba nhận dữ liệu)</h2>
       <h3>3.1. Tọa độ vị trí khi xem camera xung quanh</h3>
       <p>
         Khi bạn mở Bản đồ hoặc bật lọc camera lân cận (“Near-me”), ứng dụng xin quyền vị trí ở mức
@@ -130,9 +130,10 @@
       </p>
       <h3>3.2. Biển số xe khi tra cứu phạt nguội</h3>
       <p>
-        Khi bạn tra cứu phạt nguội, <strong>biển số xe</strong> và loại phương tiện bạn nhập được gửi qua HTTPS tới máy chủ ứng dụng
-        để chuyển tiếp truy vấn tới Cổng thông tin điện tử Cục Cảnh sát giao thông (csgt.vn) hoặc dịch vụ đối tác kết nối cổng dịch vụ công.
+        Biển số xe bạn nhập được gửi tới máy chủ ứng dụng qua HTTPS để tra cứu phạt nguội, kèm loại phương tiện bạn chọn.
+        Máy chủ chuyển tiếp truy vấn tới bên thứ ba là Cổng thông tin điện tử Cục Cảnh sát giao thông (csgt.vn) hoặc dịch vụ đối tác kết nối cổng dịch vụ công.
         Máy chủ <strong>không lưu hồ sơ vi phạm gắn với danh tính cá nhân</strong>; kết quả chỉ hiển thị trực tiếp trên màn hình của bạn.
+        Bạn chịu trách nhiệm về tính chính xác của biển số mình tra cứu và chỉ tra cứu biển số của người khác khi đã được người đó đồng ý.
       </p>
       <h3>3.3. Firebase Remote Config</h3>
       <p>
@@ -162,7 +163,16 @@
     </section>
 
     <section>
-      <h2>5. Quyền của bạn</h2>
+      <h2>5. Thời gian lưu trữ dữ liệu</h2>
+      <ul>
+        <li><strong>Dữ liệu gửi lên máy chủ:</strong> tọa độ vị trí chỉ tồn tại trong bộ nhớ tạm trong lúc xử lý yêu cầu và không được lưu vào cơ sở dữ liệu; biển số tra cứu không được lưu thành hồ sơ gắn với danh tính cá nhân. Nhật ký truy cập máy chủ (nếu có) được lưu trong thời gian ngắn phục vụ vận hành kỹ thuật và đã loại bỏ tham số tọa độ.</li>
+        <li><strong>Dữ liệu lưu cục bộ trên thiết bị:</strong> được lưu cho tới khi bạn tự xóa trong mục Cài đặt, xóa dữ liệu ứng dụng, hoặc gỡ cài đặt ứng dụng.</li>
+        <li><strong>Dữ liệu phía bên thứ ba:</strong> tuân theo chính sách lưu trữ của chính bên thứ ba đó (Google Firebase, Cổng thông tin Cục Cảnh sát giao thông/dịch vụ đối tác tra cứu).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>6. Quyền của bạn</h2>
       <ul>
         <li><strong>Quyền được biết:</strong> toàn bộ hoạt động xử lý dữ liệu được mô tả công khai tại chính trang này.</li>
         <li><strong>Quyền đồng ý và rút lại đồng ý:</strong> bạn có thể từ chối hoặc thu hồi quyền vị trí bất cứ lúc nào trong Cài đặt hệ thống của thiết bị; ứng dụng vẫn cho phép xem camera theo tỉnh/thành phố khi không cấp quyền vị trí.</li>
@@ -172,7 +182,7 @@
     </section>
 
     <section>
-      <h2>6. An toàn dữ liệu và trẻ em</h2>
+      <h2>7. An toàn dữ liệu và trẻ em</h2>
       <p>
         Mọi kết nối giữa ứng dụng và máy chủ đều dùng HTTPS (TLS). Máy chủ áp dụng giới hạn tần suất yêu cầu (rate-limiting)
         và cơ chế che giấu tọa độ trong log như mô tả ở mục 3.1. Ứng dụng là tiện ích giao thông dành cho người tham gia giao thông,
@@ -181,7 +191,7 @@
     </section>
 
     <section>
-      <h2>7. Thay đổi chính sách</h2>
+      <h2>8. Thay đổi chính sách</h2>
       <p>
         Khi thực tế thu thập dữ liệu của ứng dụng thay đổi (ví dụ tích hợp thêm dịch vụ bên thứ ba), chính sách này sẽ được cập nhật
         và công bố tại đúng địa chỉ này trước khi phiên bản ứng dụng tương ứng được phát hành, kèm mã định danh nội dung và ngày hiệu lực mới.
