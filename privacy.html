@@ -98,8 +98,21 @@
       <ul>
         <li><strong>Đại diện quản trị dữ liệu:</strong> Lê Văn Long (Longkunz)</li>
         <li><strong>Email liên hệ bảo vệ dữ liệu &amp; quyền riêng tư:</strong> <a href="mailto:mrlongdeveloper@gmail.com">mrlongdeveloper@gmail.com</a></li>
+        <li><strong>Địa chỉ liên hệ:</strong> Liên hệ qua email <a href="mailto:mrlongdeveloper@gmail.com">mrlongdeveloper@gmail.com</a> và trang dự án <a href="https://github.com/longkunz/giao-thong-vn-pages">github.com/longkunz/giao-thong-vn-pages</a> (dự án cá nhân phát triển độc lập, không công bố địa chỉ trụ sở)</li>
         <li><strong>Điều khoản sử dụng đi kèm:</strong> <a href="terms.html">terms.html</a></li>
       </ul>
+      <p>
+        <strong>Nguyên tắc trách nhiệm sử dụng (áp dụng cho toàn bộ ứng dụng và chính sách này):</strong>
+        Giao Thông VN Live chỉ là công cụ phần mềm hiển thị dữ liệu tham khảo công khai; ứng dụng
+        <strong>không phải là kênh chính thức của cơ quan nhà nước</strong> và mọi thông tin hiển thị
+        <strong>không thay thế thông báo của cơ quan có thẩm quyền</strong> (bao gồm thông báo vi phạm hay quyết định xử phạt chính thức).
+        Dữ liệu camera và kết quả tra cứu phạt nguội <strong>không được bảo đảm chính xác, đầy đủ hay tức thời</strong>,
+        vì phụ thuộc vào nguồn dữ liệu công khai và trạng thái vận hành của hệ thống tại hiện trường.
+        Người dùng <strong>tự chịu trách nhiệm về mọi hậu quả</strong> phát sinh từ việc sử dụng thông tin trong ứng dụng,
+        bao gồm việc tuyệt đối <strong>không thao tác điện thoại khi đang lái xe hay điều khiển phương tiện</strong> tham gia giao thông.
+        Trong phạm vi tối đa mà pháp luật cho phép, nhà phát triển được <strong>miễn trừ trách nhiệm</strong> đối với mọi thiệt hại
+        trực tiếp hoặc gián tiếp phát sinh từ dữ liệu hiển thị hoặc từ việc sử dụng ứng dụng.
+      </p>
       <p>
         Chính sách được biên soạn tuân thủ Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân và
         Apple App Store Review Guidelines mục 5.1.1 (Data Collection and Storage).
@@ -131,7 +144,10 @@
       <h3>3.2. Biển số xe khi tra cứu phạt nguội</h3>
       <p>
         Biển số xe bạn nhập được gửi tới máy chủ ứng dụng qua HTTPS để tra cứu phạt nguội, kèm loại phương tiện bạn chọn.
-        Máy chủ chuyển tiếp truy vấn tới bên thứ ba là Cổng thông tin điện tử Cục Cảnh sát giao thông (csgt.vn) hoặc dịch vụ đối tác kết nối cổng dịch vụ công.
+        Máy chủ chuyển tiếp truy vấn tới bên thứ ba là <strong>MoMo</strong> — cụ thể là dịch vụ MoMo Traffic Violation API
+        (máy chủ <code>aws.momo.vn</code>), là dịch vụ đối tác kết nối tới nguồn dữ liệu của Cổng thông tin điện tử
+        Cục Cảnh sát giao thông (csgt.vn) và cổng dịch vụ công. Như vậy, bên thứ ba trực tiếp nhận biển số trong quá trình
+        tra cứu là MoMo, không phải Cục Cảnh sát giao thông nhận trực tiếp từ thiết bị của bạn.
         Máy chủ <strong>không lưu hồ sơ vi phạm gắn với danh tính cá nhân</strong>; kết quả chỉ hiển thị trực tiếp trên màn hình của bạn.
         Bạn chịu trách nhiệm về tính chính xác của biển số mình tra cứu và chỉ tra cứu biển số của người khác khi đã được người đó đồng ý.
       </p>
@@ -167,7 +183,7 @@
       <ul>
         <li><strong>Dữ liệu gửi lên máy chủ:</strong> tọa độ vị trí chỉ tồn tại trong bộ nhớ tạm trong lúc xử lý yêu cầu và không được lưu vào cơ sở dữ liệu; biển số tra cứu không được lưu thành hồ sơ gắn với danh tính cá nhân. Nhật ký truy cập máy chủ (nếu có) được lưu trong thời gian ngắn phục vụ vận hành kỹ thuật và đã loại bỏ tham số tọa độ.</li>
         <li><strong>Dữ liệu lưu cục bộ trên thiết bị:</strong> được lưu cho tới khi bạn tự xóa trong mục Cài đặt, xóa dữ liệu ứng dụng, hoặc gỡ cài đặt ứng dụng.</li>
-        <li><strong>Dữ liệu phía bên thứ ba:</strong> tuân theo chính sách lưu trữ của chính bên thứ ba đó (Google Firebase, Cổng thông tin Cục Cảnh sát giao thông/dịch vụ đối tác tra cứu).</li>
+        <li><strong>Dữ liệu phía bên thứ ba:</strong> tuân theo chính sách lưu trữ của chính bên thứ ba đó (Google Firebase, MoMo — MoMo Traffic Violation API, Cổng thông tin Cục Cảnh sát giao thông/dịch vụ đối tác tra cứu).</li>
       </ul>
     </section>
 
