@@ -151,7 +151,17 @@
         Máy chủ <strong>không lưu hồ sơ vi phạm gắn với danh tính cá nhân</strong>; kết quả chỉ hiển thị trực tiếp trên màn hình của bạn.
         Bạn chịu trách nhiệm về tính chính xác của biển số mình tra cứu và chỉ tra cứu biển số của người khác khi đã được người đó đồng ý.
       </p>
-      <h3>3.3. Firebase Remote Config</h3>
+      <h3>3.3. TrackAsia — bản đồ nền trong WebView</h3>
+      <p>
+        Lớp bản đồ nền hiển thị trong ứng dụng được tải <strong>trực tiếp từ thiết bị của bạn</strong> tới máy chủ của
+        <strong>TrackAsia</strong> (<code>maps.track-asia.com</code>): thành phần bản đồ (WebView) tải tệp định dạng bản đồ
+        (style) và các ô bản đồ (tiles) từ TrackAsia, không qua máy chủ của chúng tôi. Khi bản đồ được căn giữa theo vị trí
+        hiện tại của bạn (ví dụ khi bật “Near-me”), các yêu cầu tải ô bản đồ tương ứng với vùng đang hiển thị sẽ cho TrackAsia
+        biết <strong>địa chỉ IP của thiết bị</strong> và <strong>tọa độ ô/vùng bản đồ đang hiển thị, tức vị trí gần đúng của bạn</strong>.
+        TrackAsia là một bên thứ ba nhận dữ liệu theo nghĩa này; việc TrackAsia xử lý dữ liệu đó tuân theo chính sách riêng của TrackAsia.
+        Chúng tôi không gửi tọa độ GPS chính xác của bạn cho TrackAsia qua máy chủ của chúng tôi và không dùng dữ liệu bản đồ để theo dõi hay quảng cáo.
+      </p>
+      <h3>3.4. Firebase Remote Config</h3>
       <p>
         Ứng dụng sử dụng <strong>Firebase Remote Config</strong> (Google Firebase) chỉ để nhận các giá trị cấu hình phát hành:
         phiên bản ứng dụng mới nhất/tối thiểu và liên kết cửa hàng (store URL), phục vụ thông báo cập nhật phiên bản.
@@ -183,7 +193,7 @@
       <ul>
         <li><strong>Dữ liệu gửi lên máy chủ:</strong> tọa độ vị trí chỉ tồn tại trong bộ nhớ tạm trong lúc xử lý yêu cầu và không được lưu vào cơ sở dữ liệu; biển số tra cứu không được lưu thành hồ sơ gắn với danh tính cá nhân. Nhật ký truy cập máy chủ (nếu có) được lưu trong thời gian ngắn phục vụ vận hành kỹ thuật và đã loại bỏ tham số tọa độ.</li>
         <li><strong>Dữ liệu lưu cục bộ trên thiết bị:</strong> được lưu cho tới khi bạn tự xóa trong mục Cài đặt, xóa dữ liệu ứng dụng, hoặc gỡ cài đặt ứng dụng.</li>
-        <li><strong>Dữ liệu phía bên thứ ba:</strong> tuân theo chính sách lưu trữ của chính bên thứ ba đó (Google Firebase, MoMo — MoMo Traffic Violation API, Cổng thông tin Cục Cảnh sát giao thông/dịch vụ đối tác tra cứu).</li>
+        <li><strong>Dữ liệu phía bên thứ ba:</strong> tuân theo chính sách lưu trữ của chính bên thứ ba đó (Google Firebase, MoMo — MoMo Traffic Violation API, TrackAsia — dịch vụ bản đồ nền nhận địa chỉ IP và vùng bản đồ hiển thị như mô tả ở mục 3.3, Cổng thông tin Cục Cảnh sát giao thông/dịch vụ đối tác tra cứu).</li>
       </ul>
     </section>
 
@@ -200,8 +210,8 @@
     <section>
       <h2>7. An toàn dữ liệu và trẻ em</h2>
       <p>
-        Mọi kết nối giữa ứng dụng và máy chủ đều dùng HTTPS (TLS). Máy chủ áp dụng giới hạn tần suất yêu cầu (rate-limiting)
-        và cơ chế che giấu tọa độ trong log như mô tả ở mục 3.1. Ứng dụng là tiện ích giao thông dành cho người tham gia giao thông,
+        Mọi kết nối giữa ứng dụng và máy chủ đều dùng HTTPS (TLS). Máy chủ áp dụng
+        cơ chế che giấu tọa độ trong log như mô tả ở mục 3.1. Ứng dụng là tiện ích giao thông dành cho người tham gia giao thông,
         không hướng tới trẻ em dưới 16 tuổi và không cố ý thu thập dữ liệu cá nhân của trẻ em.
       </p>
     </section>
