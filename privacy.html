@@ -161,7 +161,18 @@
         TrackAsia là một bên thứ ba nhận dữ liệu theo nghĩa này; việc TrackAsia xử lý dữ liệu đó tuân theo chính sách riêng của TrackAsia.
         Chúng tôi không gửi tọa độ GPS chính xác của bạn cho TrackAsia qua máy chủ của chúng tôi và không dùng dữ liệu bản đồ để theo dõi hay quảng cáo.
       </p>
-      <h3>3.4. Firebase Remote Config</h3>
+      <h3>3.4. Notis — ảnh tĩnh camera (snapshot)</h3>
+      <p>
+        Ảnh tĩnh (snapshot) của camera được tải <strong>trực tiếp từ thiết bị của bạn</strong> tới máy chủ của
+        <strong>Notis</strong> (<code>api.notis.vn</code>): máy chủ của chúng tôi cung cấp cho ứng dụng địa chỉ ảnh
+        dạng <code>https://api.notis.vn/v4/cameras/&lt;mã camera&gt;/snapshot</code> và thành phần hiển thị ảnh trong
+        ứng dụng tải ảnh trực tiếp từ địa chỉ này, không qua máy chủ của chúng tôi. Khi ảnh được tải, các yêu cầu đó sẽ cho Notis
+        biết <strong>địa chỉ IP của thiết bị</strong> và <strong>mã camera bạn đang xem, từ đó suy ra khu vực bạn quan tâm</strong>.
+        Notis là một bên thứ ba nhận dữ liệu theo nghĩa này; việc Notis xử lý dữ liệu đó tuân theo chính sách riêng của Notis.
+        Chúng tôi không gửi tọa độ GPS chính xác, biển số xe hay thông tin định danh của bạn cho Notis qua máy chủ của chúng tôi
+        và không dùng dữ liệu ảnh camera để theo dõi hay quảng cáo.
+      </p>
+      <h3>3.5. Firebase Remote Config</h3>
       <p>
         Ứng dụng sử dụng <strong>Firebase Remote Config</strong> (Google Firebase) chỉ để nhận các giá trị cấu hình phát hành:
         phiên bản ứng dụng mới nhất/tối thiểu và liên kết cửa hàng (store URL), phục vụ thông báo cập nhật phiên bản.
@@ -193,7 +204,7 @@
       <ul>
         <li><strong>Dữ liệu gửi lên máy chủ:</strong> tọa độ vị trí chỉ tồn tại trong bộ nhớ tạm trong lúc xử lý yêu cầu và không được lưu vào cơ sở dữ liệu; biển số tra cứu không được lưu thành hồ sơ gắn với danh tính cá nhân. Nhật ký truy cập máy chủ (nếu có) được lưu trong thời gian ngắn phục vụ vận hành kỹ thuật và đã loại bỏ tham số tọa độ.</li>
         <li><strong>Dữ liệu lưu cục bộ trên thiết bị:</strong> được lưu cho tới khi bạn tự xóa trong mục Cài đặt, xóa dữ liệu ứng dụng, hoặc gỡ cài đặt ứng dụng.</li>
-        <li><strong>Dữ liệu phía bên thứ ba:</strong> tuân theo chính sách lưu trữ của chính bên thứ ba đó (Google Firebase, MoMo — MoMo Traffic Violation API, TrackAsia — dịch vụ bản đồ nền nhận địa chỉ IP và vùng bản đồ hiển thị như mô tả ở mục 3.3, Cổng thông tin Cục Cảnh sát giao thông/dịch vụ đối tác tra cứu).</li>
+        <li><strong>Dữ liệu phía bên thứ ba:</strong> tuân theo chính sách lưu trữ của chính bên thứ ba đó (Google Firebase, MoMo — MoMo Traffic Violation API, TrackAsia — dịch vụ bản đồ nền nhận địa chỉ IP và vùng bản đồ hiển thị như mô tả ở mục 3.3, Notis — dịch vụ ảnh tĩnh camera nhận địa chỉ IP và mã camera đang xem như mô tả ở mục 3.4, Cổng thông tin Cục Cảnh sát giao thông/dịch vụ đối tác tra cứu).</li>
       </ul>
     </section>
 
