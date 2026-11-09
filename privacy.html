@@ -126,7 +126,8 @@
         <li><strong>Không thu thập dữ liệu định danh:</strong> không yêu cầu họ tên, số CCCD/CMND/hộ chiếu, danh bạ, thư viện ảnh, micrô hay dữ liệu sinh trắc học.</li>
         <li><strong>Không quảng cáo:</strong> phiên bản hiện tại của ứng dụng không hiển thị quảng cáo và không tích hợp mạng quảng cáo nào.</li>
         <li><strong>Không theo dõi (no tracking):</strong> ứng dụng không dùng công cụ phân tích hành vi (analytics) để theo dõi người dùng,
-          không chia sẻ dữ liệu cho nhà quảng cáo hay bên môi giới dữ liệu. Thư viện Firebase Analytics bị loại khỏi quá trình liên kết native của ứng dụng.</li>
+          không chia sẻ dữ liệu cho nhà quảng cáo hay bên môi giới dữ liệu. Thư viện Firebase Analytics bị loại khỏi quá trình liên kết native của ứng dụng.
+          Tính năng theo dõi phạt nguội tự động ở mục 3.6 là ngoại lệ DUY NHẤT cho "không theo dõi" — và chỉ hoạt động khi bạn đồng ý rõ ràng.</li>
         <li><strong>Không theo dõi vị trí nền:</strong> ứng dụng không yêu cầu quyền vị trí chạy ngầm và không ghi nhận lịch sử hành trình di chuyển.</li>
       </ul>
     </section>
@@ -148,7 +149,9 @@
         (máy chủ <code>aws.momo.vn</code>), là dịch vụ đối tác kết nối tới nguồn dữ liệu của Cổng thông tin điện tử
         Cục Cảnh sát giao thông (csgt.vn) và cổng dịch vụ công. Như vậy, bên thứ ba trực tiếp nhận biển số trong quá trình
         tra cứu là MoMo, không phải Cục Cảnh sát giao thông nhận trực tiếp từ thiết bị của bạn.
-        Máy chủ <strong>không lưu hồ sơ vi phạm gắn với danh tính cá nhân</strong>; kết quả chỉ hiển thị trực tiếp trên màn hình của bạn.
+        Đối với lần tra cứu trực tiếp này (không bật theo dõi), máy chủ <strong>không lưu kết quả tra cứu thành hồ sơ</strong>;
+        kết quả chỉ hiển thị trực tiếp trên màn hình của bạn. Riêng khi bạn bật theo dõi phạt nguội tự động,
+        máy chủ lưu biển số và ảnh chụp mã vi phạm theo mục 3.6.
         Bạn chịu trách nhiệm về tính chính xác của biển số mình tra cứu và chỉ tra cứu biển số của người khác khi đã được người đó đồng ý.
       </p>
       <h3>3.3. TrackAsia — bản đồ nền trong WebView</h3>
@@ -179,6 +182,34 @@
         Remote Config <strong>không được dùng để định danh, theo dõi hành vi hay quảng cáo</strong>. Khi module native Firebase
         không khả dụng (ví dụ bản chạy thử), ứng dụng dùng giá trị mặc định cục bộ và không gửi dữ liệu nào.
       </p>
+      <h3>3.6. Theo dõi phạt nguội tự động (chỉ khi bạn đồng ý rõ ràng)</h3>
+      <p>
+        Tính năng "Theo dõi phạt nguội tự động" chỉ hoạt động khi bạn chủ động bật tính năng và đồng ý rõ ràng
+        cho phép lưu biển số trên máy chủ. Nếu bạn không đồng ý, biển số chỉ được dùng cho lần tra cứu trực
+        tiếp theo mục 3.2 và không được lưu trên máy chủ để theo dõi.
+      </p>
+      <ul>
+        <li><strong>Dữ liệu lưu trên máy chủ (tối thiểu hoá):</strong> khi bạn đồng ý, máy chủ chỉ lưu: biển số xe,
+          loại phương tiện, mã định danh cài đặt ẩn danh (install ID — không gắn với tài khoản hay thông tin
+          định danh cá nhân), mã thông báo đẩy (push token) của thiết bị và ảnh chụp các mã vi phạm gần nhất
+          của chính biển số đó (để so sánh, tránh thông báo trùng). Chúng tôi <strong>không</strong> lưu vị trí,
+          hành trình hay bất kỳ dữ liệu nào khác cho tính năng này.</li>
+        <li><strong>Mã hoá khi lưu trữ:</strong> biển số và push token được mã hoá (AES-256-GCM) khi lưu trữ phía
+          máy chủ và chỉ được giải mã trong bộ nhớ khi thực hiện tra cứu định kỳ hoặc gửi thông báo.</li>
+        <li><strong>Mục đích và tần suất tra cứu định kỳ:</strong> máy chủ tra cứu định kỳ (mặc định 1 lần/ngày
+          cho mỗi biển số đang bật theo dõi) tới nguồn dữ liệu phạt nguội công khai và chỉ gửi thông báo đẩy
+          khi xuất hiện vi phạm mới so với lần tra trước. Lượt tra đầu tiên của một biển mới đăng ký
+          chỉ lập ảnh chụp ban đầu, không gửi thông báo cho các vi phạm đã có từ trước. Nội dung thông báo chỉ chứa
+          biển số đã che (ví dụ "51A***45"), không chứa biển số đầy đủ. Push token chỉ được chia sẻ với hạ
+          tầng gửi thông báo (Expo Push Service / FCM / APNs) đúng mức cần thiết để chuyển thông báo tới
+          thiết bị của bạn; ngoài ra dữ liệu theo dõi không được chia sẻ cho bất kỳ bên thứ ba nào.</li>
+        <li><strong>Quyền thông báo:</strong> thông báo đẩy chỉ được gửi khi bạn đã cấp quyền thông báo trên thiết bị.
+          Nếu bạn tắt quyền, ứng dụng hiển thị trạng thái vi phạm trong ứng dụng thay vì gửi thông báo.</li>
+        <li><strong>Kiểm soát và xoá dữ liệu theo dõi:</strong> bạn có thể tắt theo dõi từng biển số, hoặc rút lại
+          đồng ý và <strong>xoá toàn bộ dữ liệu theo dõi của mình khỏi máy chủ</strong> bất cứ lúc nào ngay trong
+          mục Theo dõi phạt nguội tại màn hình tra cứu. Khi rút đồng ý, toàn bộ bản ghi theo dõi gắn với mã cài
+          đặt của bạn bị xoá triệt để khỏi máy chủ và việc tra cứu định kỳ dừng lại.</li>
+      </ul>
     </section>
 
     <section>
@@ -202,7 +233,7 @@
     <section>
       <h2>5. Thời gian lưu trữ dữ liệu</h2>
       <ul>
-        <li><strong>Dữ liệu gửi lên máy chủ:</strong> tọa độ vị trí chỉ tồn tại trong bộ nhớ tạm trong lúc xử lý yêu cầu và không được lưu vào cơ sở dữ liệu; biển số tra cứu không được lưu thành hồ sơ gắn với danh tính cá nhân. Nhật ký truy cập máy chủ (nếu có) được lưu trong thời gian ngắn phục vụ vận hành kỹ thuật và đã loại bỏ tham số tọa độ.</li>
+        <li><strong>Dữ liệu gửi lên máy chủ:</strong> tọa độ vị trí chỉ tồn tại trong bộ nhớ tạm trong lúc xử lý yêu cầu và không được lưu vào cơ sở dữ liệu; biển số của lần tra cứu trực tiếp không được lưu thành hồ sơ gắn với danh tính cá nhân. Riêng dữ liệu theo dõi phạt nguội tự động (biển số đã mã hoá, push token, ảnh chụp mã vi phạm) được lưu theo mục 3.6 cho tới khi bạn tắt theo dõi từng biển hoặc rút đồng ý và xoá toàn bộ dữ liệu theo dõi. Nhật ký truy cập máy chủ (nếu có) được lưu trong thời gian ngắn phục vụ vận hành kỹ thuật và đã loại bỏ tham số tọa độ.</li>
         <li><strong>Dữ liệu lưu cục bộ trên thiết bị:</strong> được lưu cho tới khi bạn tự xóa trong mục Cài đặt, xóa dữ liệu ứng dụng, hoặc gỡ cài đặt ứng dụng.</li>
         <li><strong>Dữ liệu phía bên thứ ba:</strong> tuân theo chính sách lưu trữ của chính bên thứ ba đó (Google Firebase, MoMo — MoMo Traffic Violation API, TrackAsia — dịch vụ bản đồ nền nhận địa chỉ IP và vùng bản đồ hiển thị như mô tả ở mục 3.3, Notis — dịch vụ ảnh tĩnh camera nhận địa chỉ IP và mã camera đang xem như mô tả ở mục 3.4, Cổng thông tin Cục Cảnh sát giao thông/dịch vụ đối tác tra cứu).</li>
       </ul>
@@ -212,8 +243,8 @@
       <h2>6. Quyền của bạn</h2>
       <ul>
         <li><strong>Quyền được biết:</strong> toàn bộ hoạt động xử lý dữ liệu được mô tả công khai tại chính trang này.</li>
-        <li><strong>Quyền đồng ý và rút lại đồng ý:</strong> bạn có thể từ chối hoặc thu hồi quyền vị trí bất cứ lúc nào trong Cài đặt hệ thống của thiết bị; ứng dụng vẫn cho phép xem camera theo tỉnh/thành phố khi không cấp quyền vị trí.</li>
-        <li><strong>Quyền xóa dữ liệu:</strong> xóa lịch sử tra cứu, camera yêu thích và bộ nhớ đệm ngay trong ứng dụng hoặc khi gỡ cài đặt.</li>
+        <li><strong>Quyền đồng ý và rút lại đồng ý:</strong> bạn có thể từ chối hoặc thu hồi quyền vị trí bất cứ lúc nào trong Cài đặt hệ thống của thiết bị; ứng dụng vẫn cho phép xem camera theo tỉnh/thành phố khi không cấp quyền vị trí. Riêng tính năng theo dõi phạt nguội tự động (mục 3.6) chỉ bật khi bạn đồng ý rõ ràng trong ứng dụng, và bạn có thể rút đồng ý bất cứ lúc nào ngay trong mục Theo dõi phạt nguội.</li>
+        <li><strong>Quyền xóa dữ liệu:</strong> xóa lịch sử tra cứu, camera yêu thích và bộ nhớ đệm ngay trong ứng dụng hoặc khi gỡ cài đặt. Đối với dữ liệu theo dõi phạt nguội tự động lưu trên máy chủ (mục 3.6), bạn có thể rút đồng ý và xoá toàn bộ dữ liệu theo dõi khỏi máy chủ ngay trong ứng dụng.</li>
         <li><strong>Quyền khiếu nại, phản ánh:</strong> gửi email tới <a href="mailto:mrlongdeveloper@gmail.com">mrlongdeveloper@gmail.com</a>.</li>
       </ul>
     </section>
