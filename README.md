@@ -18,7 +18,7 @@ Kho lưu trữ công khai chứa tài liệu điều khoản sử dụng, chính
 ## 3. Quy trình cập nhật nội dung (Update & Publish Workflow)
 
 1. **Chỉnh sửa nội dung:**
-   - Thực hiện cập nhật trực tiếp tại file `terms.html` và `index.html`.
+   - Bản gốc nằm trong repo ứng dụng (`docs/legal/*.md`, `docs/legal/pages/*.html`); publish nguyên văn `privacy.html`, `terms.html`, `index.html` sang repo này (`index.html` trùng khớp `terms.html`).
    - Nếu thay đổi nội dung có tính chất quan trọng, cập nhật thuộc tính `data-content-id` (ví dụ: `giao-thong-vn-terms-v2`) và ngày hiệu lực `data-effective-date`.
 2. **Kiểm thử trước khi commit:**
    - Mở file HTML trên trình duyệt hoặc công cụ mô phỏng thiết bị di động để kiểm tra bố cục và khả năng đọc.
@@ -27,8 +27,6 @@ Kho lưu trữ công khai chứa tài liệu điều khoản sử dụng, chính
 4. **Xác nhận phát hành:**
    - Kiểm tra HTTPS URL trên thiết bị thật hoặc kiểm tra mã phản hồi HTTP 200.
 
-## 4. Lưu ý về phê duyệt chính thức
+## 4. Trạng thái phát hành
 
-> [!IMPORTANT]
-> Bản tài liệu hiện tại là **bản nháp kỹ thuật (draft)** phục vụ tích hợp luồng onboarding và cài đặt trong ứng dụng.
-> Chủ sở hữu ứng dụng cần hoàn tất các thông tin liên hệ trong ngoặc `[CẦN ĐIỀN]` và phê duyệt trước khi phát hành chính thức ứng dụng ra thị trường.
+Bản hiện tại là **bản chính thức phiên bản 2.0**, hiệu lực từ ngày 15/11/2026, thay thế phiên bản 1.0 (hiệu lực 08/11/2026). Ứng dụng yêu cầu người dùng chấp thuận lại khi mã định danh nội dung thay đổi.

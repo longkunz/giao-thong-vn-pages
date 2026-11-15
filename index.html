@@ -1,309 +1,110 @@
 <!DOCTYPE html>
-<html lang="vi" data-content-id="giao-thong-vn-terms-v1-official" data-effective-date="2026-11-08">
+<html lang="vi" data-content-id="giao-thong-vn-terms-v2-official" data-effective-date="2026-11-15">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#0284c7">
-  <meta name="description" content="Điều khoản sử dụng dịch vụ ứng dụng Giao Thông VN Live">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Điều khoản sử dụng ứng dụng Giao Thông VN Live">
   <title>Điều khoản sử dụng - Giao Thông VN Live</title>
   <style>
     :root {
-      --bg: #ffffff;
-      --card-bg: #f8fafc;
-      --text: #0f172a;
-      --text-muted: #64748b;
-      --primary: #0284c7;
-      --primary-dark: #0369a1;
-      --border: #e2e8f0;
-      --warning-bg: #fffbeb;
-      --warning-border: #fcd34d;
-      --warning-text: #92400e;
-      --badge-bg: #e0f2fe;
-      --badge-text: #0369a1;
+      --bg: #ffffff; --card: #f8fafc; --text: #0f172a; --muted: #475569;
+      --primary: #0369a1; --border: #e2e8f0;
     }
-
     @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0b1120;
-        --card-bg: #1e293b;
-        --text: #f1f5f9;
-        --text-muted: #94a3b8;
-        --primary: #38bdf8;
-        --primary-dark: #0ea5e9;
-        --border: #334155;
-        --warning-bg: #2d2309;
-        --warning-border: #854d0e;
-        --warning-text: #fde68a;
-        --badge-bg: #082f49;
-        --badge-text: #7dd3fc;
-      }
+      :root { --bg: #0b1120; --card: #1e293b; --text: #f1f5f9; --muted: #94a3b8; --primary: #7dd3fc; --border: #334155; }
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 16px; background: var(--bg); color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      padding: 16px;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-      padding-bottom: 48px;
-    }
-
-    header {
-      padding: 20px 0 16px;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 24px;
-    }
-
-    .app-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 8px;
-    }
-
-    h1 {
-      font-size: 1.75rem;
-      line-height: 1.25;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-
-    .meta-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      align-items: center;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 9999px;
-      font-weight: 600;
-      font-size: 0.75rem;
-      background-color: var(--badge-bg);
-      color: var(--badge-text);
-    }
-
-
-
-
-
-    h2 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin: 28px 0 12px;
-      color: var(--primary);
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 6px;
-    }
-
-    h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin: 18px 0 8px;
-      color: var(--text);
-    }
-
-    p {
-      margin-bottom: 14px;
-      font-size: 0.98rem;
-    }
-
-    ul, ol {
-      padding-left: 24px;
-      margin-bottom: 16px;
-      font-size: 0.98rem;
-    }
-
-    li {
-      margin-bottom: 6px;
-    }
-
-    .card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
-      margin: 16px 0;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: var(--primary);
-    }
-
-    .notice {
-      border-left: 4px solid var(--primary);
-      padding-left: 12px;
-      margin: 16px 0;
-      font-style: italic;
-      color: var(--text-muted);
-    }
-
-    footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
+      line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 760px; margin: 0 auto; padding-bottom: 48px; }
+    header { text-align: center; padding: 16px 0 12px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .brand { font-size: 0.85rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    h1 { font-size: 1.5rem; line-height: 1.3; margin: 8px 0 4px; text-transform: uppercase; }
+    .subtitle { font-weight: 600; margin: 0; }
+    h2 { font-size: 1.1rem; margin: 28px 0 8px; text-align: center; text-transform: uppercase; color: var(--primary); }
+    h3 { font-size: 1rem; margin: 18px 0 6px; }
+    p, li, td, th { font-size: 0.97rem; }
+    p { margin: 0 0 12px; text-align: justify; }
+    ol, ul { padding-left: 24px; margin: 0 0 14px; }
+    li { margin-bottom: 6px; }
+    .point { margin: 4px 0 4px 4px; }
+    .table-wrap { overflow-x: auto; margin: 0 0 16px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid var(--border); padding: 6px 8px; text-align: left; vertical-align: top; }
+    th { background: var(--card); }
+    code { font-size: 0.88em; overflow-wrap: anywhere; }
+    a { color: var(--primary); overflow-wrap: anywhere; }
+    footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border); text-align: center; font-size: 0.85rem; color: var(--muted); }
   </style>
 </head>
-<body>
+<body data-content-id="giao-thong-vn-terms-v2-official">
   <div class="container">
     <header>
-      <div class="app-brand">
-        <span>🚦 Giao Thông VN Live</span>
-      </div>
-      <h1>Điều khoản sử dụng dịch vụ</h1>
-      <div class="meta-bar">
-        <span class="badge">BẢN CHÍNH THỨC</span>
-        <span id="terms-content-id">Mã định danh: <strong>giao-thong-vn-terms-v1-official</strong></span>
-        <span>•</span>
-        <span id="terms-effective-date">Ngày hiệu lực: <strong>2026-11-08</strong> (08/11/2026)</span>
-      </div>
+      <div class="brand">Giao Thông VN Live</div>
+      <h1>ĐIỀU KHOẢN SỬ DỤNG</h1>
+      <p class="subtitle">Ứng dụng Giao Thông VN Live</p>
     </header>
-
-
-    <section>
-      <h2>1. Thông tin chủ thể và đầu mối liên hệ</h2>
-      <div class="card">
-        <p>Thông tin chủ thể sở hữu và đầu mối liên hệ chính thức của ứng dụng:</p>
-        <ul>
-          <li><strong>Đơn vị / Cá nhân sở hữu:</strong> Dự án Giao Thông VN Live — Lê Văn Long (Longkunz), lập trình viên cá nhân độc lập, dự án nguồn mở phi lợi nhuận phục vụ cộng đồng</li>
-          <li><strong>Người đại diện pháp lý / phụ trách:</strong> Lê Văn Long (Longkunz)</li>
-          <li><strong>Email liên hệ hỗ trợ / pháp lý:</strong> <a href="mailto:mrlongdeveloper@gmail.com">mrlongdeveloper@gmail.com</a></li>
-          <li><strong>Địa chỉ liên hệ:</strong> Liên hệ qua email mrlongdeveloper@gmail.com và trang dự án <a href="https://github.com/longkunz/giao-thong-vn-pages">github.com/longkunz/giao-thong-vn-pages</a> (dự án cá nhân phát triển độc lập, không công bố địa chỉ trụ sở)</li>
-          <li><strong>Ngày ký duyệt chính thức:</strong> 2026-11-08 (08/11/2026)</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>2. Tuyên bố từ chối trách nhiệm & Tư cách độc lập (Disclaimer)</h2>
-      <div class="notice">
-        <strong>TUYÊN BỐ QUAN TRỌNG VỀ TƯ CÁCH ĐƠN VỊ CUNG CẤP:</strong><br>
-        Ứng dụng Giao Thông VN Live là một sản phẩm phần mềm độc lập, được phát triển phục vụ tiện ích cộng đồng. 
-        Ứng dụng <strong>HOÀN TOÀN KHÔNG PHẢI</strong> là cơ quan, đại diện, dịch vụ trực thuộc hoặc được ủy quyền bởi bất kỳ cơ quan nhà nước, 
-        cơ quan công an, Cục Cảnh sát Giao thông (C08), Sở Giao thông Vận tải hay các đơn vị điều hành giao thông công quyền nào của Việt Nam.
-      </div>
-      <p>
-        Toàn bộ dữ liệu hình ảnh, video và thông tin tra cứu giao thông được tổng hợp và đối soát từ các nguồn dữ liệu công khai trên Internet. 
-        Dữ liệu chỉ mang tính chất tham khảo, hỗ trợ người dùng nắm bắt thông tin giao thông. 
-        Mọi kết quả tra cứu hoặc phản ánh qua ứng dụng không có giá trị thay thế biên bản vi phạm, thông báo vi phạm hay quyết định xử phạt vi phạm hành chính chính thức của cơ quan có thẩm quyền.
-      </p>
-      <p>
-        <strong>Tính chính xác của dữ liệu:</strong> Dữ liệu camera và phạt nguội trong ứng dụng <strong>không được bảo đảm chính xác, đầy đủ hay tức thời</strong>,
-        vì phụ thuộc vào nguồn dữ liệu công khai và trạng thái vận hành của hệ thống camera tại hiện trường.
-        Người dùng có trách nhiệm tự kiểm chứng thông tin với cơ quan chức năng có thẩm quyền trước khi dựa vào thông tin để ra quyết định.
-      </p>
-      <p>
-        <strong>Giới hạn trách nhiệm:</strong> Nhà phát triển được <strong>miễn trừ trách nhiệm ở mức tối đa pháp luật cho phép</strong> đối với mọi thiệt hại trực tiếp
-        hoặc gián tiếp phát sinh từ dữ liệu hiển thị hoặc từ việc sử dụng ứng dụng. Trong mọi trường hợp, trách nhiệm của nhà phát triển
-        (nếu có theo phán quyết có hiệu lực) được giới hạn ở mức tối thiểu theo quy định pháp luật.
-      </p>
-    </section>
-
-    <section>
-      <h2>3. Mô tả các dịch vụ & chức năng hiện có</h2>
-      
-      <h3>3.1. Camera Snapshot (Ảnh tĩnh camera giao thông)</h3>
-      <p>
-        Ứng dụng cung cấp hình ảnh tĩnh được trích xuất từ các camera giám sát giao thông đô thị công cộng. 
-        Hình ảnh được tự động làm mới theo chu kỳ cố định <strong>12 giây</strong> khi người dùng mở xem chi tiết một camera. 
-        Ảnh tĩnh được thiết bị của bạn tải trực tiếp từ <strong>Notis</strong> (<code>api.notis.vn</code>) theo địa chỉ
-        <code>https://api.notis.vn/v4/cameras/&lt;mã camera&gt;/snapshot</code>, nên Notis có thể nhận địa chỉ IP của thiết bị và mã camera bạn đang xem
-        như mô tả tại mục 3.4 của Chính sách bảo mật. Dữ liệu hình ảnh phụ thuộc vào trạng thái vận hành của camera tại hiện trường.
-      </p>
-
-      <h3>3.2. Camera Live Stream (Phát video trực tiếp)</h3>
-      <p>
-        Đối với các camera hỗ trợ phát luồng video trực tiếp thời gian thực định dạng HLS/RTSP, ứng dụng cung cấp giao diện phát luồng để người dùng quan sát tình hình giao thông. 
-        Ứng dụng chỉ đóng vai trò phần mềm phát (client-player) luồng dữ liệu công khai và không chịu trách nhiệm về độ trễ, gián đoạn kết nối của nhà cung cấp luồng.
-      </p>
-
-      <h3>3.3. Tra cứu phạt nguội (Traffic Fine Verification)</h3>
-      <p>
-        Ứng dụng hỗ trợ người dùng nhập biển kiểm soát và loại phương tiện để gửi truy vấn tra cứu thông tin vi phạm trật tự an toàn giao thông đường bộ. 
-        Dữ liệu được truy vấn trung gian từ các cổng dữ liệu công khai hoặc dịch vụ đối tác liên kết (như MoMo Traffic Violation API / Cổng thông tin Cục CSGT). 
-        Ứng dụng không can thiệp, không lưu giữ dữ liệu xử phạt vi phạm trên máy chủ và không thu phí tra cứu thông tin phạt nguội.
-      </p>
-    </section>
-
-    <section>
-      <h2>4. Lưu trữ dữ liệu cục bộ & Quyền riêng tư</h2>
-      <p>
-        Ứng dụng tôn trọng tối đa quyền riêng tư của người sử dụng và áp dụng kiến trúc lưu trữ dữ liệu hoàn toàn cục bộ trên thiết bị (Local Device Storage qua AsyncStorage):
-      </p>
-      <ul>
-        <li><strong>Không yêu cầu tài khoản:</strong> Ứng dụng không yêu cầu đăng ký, đăng nhập tài khoản hoặc cung cấp thông tin cá nhân (như họ tên, số điện thoại, số CCCD).</li>
-        <li><strong>Camera yêu thích (Favorite Camera):</strong> Danh sách các camera do người dùng ghim hoặc đánh dấu yêu thích được lưu cục bộ trên thiết bị để phục vụ truy cập nhanh.</li>
-        <li><strong>Lịch sử tra cứu biển số (Vehicle Query History):</strong> Các biển số phương tiện đã tra cứu chỉ được lưu trong bộ nhớ máy của người dùng nhằm hỗ trợ điền nhanh lần sau.</li>
-        <li><strong>Tùy chọn giao diện (Theme Mode):</strong> Lựa chọn hiển thị Sáng, Tối hoặc Tự động theo Hệ thống được lưu cục bộ trên máy.</li>
-        <li><strong>Ghi nhận đồng ý điều khoản:</strong> Dấu thời gian (timestamp) và mã định danh nội dung điều khoản được lưu trên thiết bị sau khi người dùng chủ động bấm đồng ý.</li>
-        <li><strong>Quyền vị trí địa lý (GPS Location):</strong> Chỉ được yêu cầu khi người dùng chủ động mở bản đồ hoặc tra cứu camera lân cận (Near-me). Tọa độ (vĩ độ, kinh độ) được truyền qua kết nối an toàn HTTPS tới máy chủ ứng dụng (/api/cameras) chỉ nhằm mục đích tính toán khoảng cách, lọc và sắp xếp camera giao thông xung quanh trong bộ nhớ tạm thời (in-memory); máy chủ không lưu trữ dữ liệu vị trí vào cơ sở dữ liệu, không ghi nhận lịch sử di chuyển, không định danh người dùng; hệ thống cấu hình tự động che giấu / loại bỏ tọa độ khỏi nhật ký truy cập máy chủ (access log redaction) và hoàn toàn không thu thập ngầm trong nền.</li>
-      </ul>
-      <p>
-        Khi người dùng gỡ bỏ ứng dụng hoặc xóa dữ liệu bộ nhớ ứng dụng trên hệ điều hành, toàn bộ dữ liệu lưu trữ cục bộ nói trên sẽ tự động bị xóa.
-      </p>
-    </section>
-
-    <section>
-      <h2>5. Trách nhiệm của người sử dụng</h2>
-      <ul>
-        <li>Người dùng phải tuyệt đối tuân thủ Luật Giao thông Đường bộ và các quy định pháp luật liên quan khi tham gia giao thông.</li>
-        <li>Tuyệt đối <strong>không thao tác ứng dụng khi đang trực tiếp điều khiển phương tiện giao thông</strong> (xe máy, ô tô, phương tiện cơ giới) để tránh gây mất an toàn cho bản thân và người tham gia giao thông khác.</li>
-        <li>Không sử dụng ứng dụng hoặc khai thác luồng dữ liệu vào mục đích phá hoại, tấn công hệ thống hạ tầng camera giao thông hoặc vi phạm pháp luật.</li>
-        <li>Người dùng <strong>tự chịu trách nhiệm về mọi hậu quả</strong> phát sinh từ việc sử dụng thông tin trong ứng dụng, bao gồm hậu quả của việc thao tác điện thoại khi đang tham gia giao thông.</li>
-        <li>Người dùng chịu trách nhiệm về tính chính xác của biển số mình tra cứu và <strong>không tra cứu biển số của người khác khi chưa được người đó đồng ý</strong>.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>6. Quy trình cập nhật điều khoản & Phê duyệt phát hành</h2>
-      <p>
-        <strong>Quy trình thay đổi & publish:</strong>
-      </p>
-      <ol>
-        <li>Mọi điều chỉnh nội dung điều khoản được quản lý dưới dạng mã nguồn mở tại kho lưu trữ tài liệu công khai: 
-          <code>https://github.com/longkunz/giao-thong-vn-pages</code>.
-        </li>
-        <li>Nội dung được cập nhật và xuất bản tự động thông qua giao thức HTTPS của GitHub Pages.</li>
-        <li>Khi có thay đổi lớn, mã định danh nội dung (content identifier) và ngày hiệu lực sẽ được cập nhật tương ứng.</li>
-      </ol>
-      <p>
-        <strong>Phân định trách nhiệm:</strong> Văn bản này là bản chính thức, đã được chủ sở hữu ứng dụng rà soát và phê duyệt,
-        có hiệu lực áp dụng từ ngày 2026-11-08. Chính sách bảo mật đi kèm được công bố tại
-        <a href="privacy.html">privacy.html</a>.
-      </p>
-    </section>
-
+    <main>
+<div class="table-wrap"><table><thead><tr><th>Thông tin văn bản</th><th></th></tr></thead><tbody><tr><td>Phiên bản</td><td>2.0 (bản chính thức)</td></tr><tr><td>Mã định danh nội dung</td><td><code>giao-thong-vn-terms-v2-official</code></td></tr><tr><td>Ngày ban hành</td><td>15/11/2026</td></tr><tr><td>Ngày có hiệu lực</td><td>15/11/2026 (<code>2026-11-15</code>)</td></tr><tr><td>Văn bản được thay thế</td><td>Điều khoản sử dụng phiên bản 1.0 (<code>giao-thong-vn-terms-v1-official</code>, hiệu lực từ 08/11/2026)</td></tr><tr><td>Địa chỉ công bố</td><td><a href="terms.html">https://longkunz.github.io/giao-thong-vn-pages/terms.html</a></td></tr><tr><td>Văn bản liên quan</td><td>Chính sách bảo vệ dữ liệu cá nhân: <a href="privacy.html">https://longkunz.github.io/giao-thong-vn-pages/privacy.html</a></td></tr></tbody></table></div>
+<p><strong>Căn cứ pháp lý:</strong></p>
+<ul><li>Bộ luật Dân sự số 91/2015/QH13;</li><li>Luật Giao dịch điện tử số 20/2023/QH15;</li><li>Luật Bảo vệ quyền lợi người tiêu dùng số 19/2023/QH15;</li><li>Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15;</li><li>Luật Trật tự, an toàn giao thông đường bộ số 36/2024/QH15;</li><li>Luật Tiếp cận thông tin số 104/2016/QH13;</li><li>Luật Sở hữu trí tuệ số 50/2005/QH11 (được sửa đổi, bổ sung).</li></ul>
+<h2>Chương I. QUY ĐỊNH CHUNG</h2>
+<h3>Điều 1. Phạm vi điều chỉnh và đối tượng áp dụng</h3>
+<ol><li>Điều khoản này quy định điều kiện sử dụng, quyền và nghĩa vụ của các bên khi sử dụng ứng dụng di động Giao Thông VN Live trên iOS và Android, các tiện ích màn hình chính (widget) và máy chủ phục vụ ứng dụng (sau đây gọi chung là <strong>"Ứng dụng"</strong>).</li><li>Điều khoản áp dụng đối với Nhà phát triển quy định tại Điều 3 và mọi cá nhân cài đặt, truy cập hoặc sử dụng Ứng dụng (sau đây gọi là <strong>"Người dùng"</strong> hoặc <strong>"bạn"</strong>).</li><li>Chính sách bảo vệ dữ liệu cá nhân của Ứng dụng là bộ phận không tách rời của Điều khoản này.</li></ol>
+<h3>Điều 2. Giải thích từ ngữ</h3>
+<ol><li><strong>Nhà phát triển</strong> là cá nhân sở hữu, vận hành Ứng dụng, được xác định tại Điều 3.</li><li><strong>Dữ liệu tham khảo</strong> là ảnh, video camera giao thông, nhãn tình trạng giao thông, kết quả tra cứu phạt nguội, giá nhiên liệu và mọi thông tin khác Ứng dụng tổng hợp từ nguồn bên thứ ba để hiển thị.</li><li><strong>Tài khoản</strong> là tài khoản Người dùng tạo bằng cách đăng nhập qua Google hoặc Apple trong Ứng dụng.</li><li><strong>Gói Pro</strong> là gói thuê bao trả phí, gia hạn tự động, mua qua App Store hoặc Google Play.</li><li><strong>Cửa hàng ứng dụng</strong> là Apple App Store và Google Play.</li><li><strong>Theo dõi phạt nguội tự động</strong> là tính năng máy chủ định kỳ tra cứu phạt nguội cho biển số do Người dùng đăng ký và gửi thông báo khi có vi phạm mới.</li></ol>
+<h3>Điều 3. Thông tin Nhà phát triển</h3>
+<ol><li>Nhà phát triển: <strong>Ông Lê Văn Long (Longkunz)</strong>, nhà phát triển cá nhân độc lập.</li><li>Thư điện tử tiếp nhận hỗ trợ, phản ánh và khiếu nại: <a href="mailto:mrlongdeveloper@gmail.com">mrlongdeveloper@gmail.com</a>.</li><li>Trang liên hệ: <a href="contact.html">https://longkunz.github.io/giao-thong-vn-pages/contact.html</a>.</li></ol>
+<h3>Điều 4. Chấp thuận Điều khoản</h3>
+<ol><li>Trước khi sử dụng Ứng dụng lần đầu, bạn phải đọc toàn văn Điều khoản này và bấm nút đồng ý trên màn hình chấp thuận. Việc bấm đồng ý là hình thức giao kết hợp đồng bằng phương tiện điện tử, có giá trị như văn bản theo quy định của Luật Giao dịch điện tử.</li><li>Ứng dụng lưu trên thiết bị bản ghi chấp thuận gồm mã định danh nội dung và thời điểm chấp thuận.</li><li>Nếu không đồng ý với bất kỳ nội dung nào, bạn không được sử dụng Ứng dụng và nên gỡ cài đặt Ứng dụng khỏi thiết bị.</li><li>Bạn cam kết có đủ năng lực hành vi dân sự để chấp thuận Điều khoản này. Người dưới 16 tuổi chỉ được sử dụng Ứng dụng khi có sự đồng ý và giám sát của cha, mẹ hoặc người giám hộ; việc mua Gói Pro của người chưa thành niên phải được người đại diện theo pháp luật đồng ý.</li></ol>
+<h2>Chương II. DỊCH VỤ VÀ TÍNH CHẤT CỦA DỮ LIỆU</h2>
+<h3>Điều 5. Các dịch vụ của Ứng dụng</h3>
+<ol><li>Xem ảnh tĩnh và (khi nguồn cung cấp) video trực tiếp từ camera giao thông công cộng; xem camera trên bản đồ và camera gần vị trí của bạn; nhãn tình trạng ùn tắc tham khảo.</li><li>Tra cứu thông tin vi phạm giao thông được phát hiện qua hình ảnh (phạt nguội) theo biển số; quét biển số bằng camera thiết bị.</li><li>Theo dõi phạt nguội tự động và thông báo đẩy khi có vi phạm mới, chỉ khi bạn đồng ý rõ ràng.</li><li>Xem giá bán lẻ nhiên liệu tham khảo.</li><li>Tiện ích màn hình chính (widget) hiển thị tình trạng biển số đã tra cứu và giá nhiên liệu.</li><li>Gói Pro với các quyền lợi theo Điều 9.</li></ol>
+<p>Nhà phát triển có quyền bổ sung, điều chỉnh, tạm ngừng hoặc chấm dứt từng dịch vụ theo Điều 17.</p>
+<h3>Điều 6. Tính chất tham khảo và tư cách độc lập của Ứng dụng</h3>
+<ol><li>Ứng dụng là sản phẩm của nhà phát triển cá nhân độc lập, <strong>không phải kênh chính thức của cơ quan nhà nước</strong>; không thuộc, không đại diện, không liên kết và không được ủy quyền bởi Bộ Công an, Cục Cảnh sát giao thông, Bộ Xây dựng, Sở Xây dựng, Sở Giao thông vận tải, các Trung tâm quản lý điều hành giao thông hay bất kỳ cơ quan nhà nước nào.</li><li>Dữ liệu tham khảo chỉ nhằm hỗ trợ Người dùng chủ động lộ trình và nắm thông tin. Dữ liệu tham khảo <strong>không có giá trị pháp lý</strong>, <strong>không thay thế thông báo của cơ quan có thẩm quyền</strong>, biên bản vi phạm hành chính hay quyết định xử phạt.</li><li>Dữ liệu tham khảo <strong>không được bảo đảm chính xác, đầy đủ, liên tục hay tức thời</strong>, vì phụ thuộc vào nguồn cung cấp và tình trạng vận hành của thiết bị tại hiện trường. Việc không có kết quả vi phạm trong Ứng dụng không có nghĩa là phương tiện không có vi phạm.</li><li>Ứng dụng không thu, không nộp hộ tiền phạt và không có thẩm quyền thay đổi trạng thái xử lý vi phạm. Để giải quyết vi phạm, bạn liên hệ trực tiếp cơ quan, đơn vị có thẩm quyền ghi trên thông báo vi phạm.</li></ol>
+<h3>Điều 7. Nguồn dữ liệu bên thứ ba</h3>
+<ol><li>Dữ liệu tham khảo được tổng hợp từ các nguồn công khai và đối tác, bao gồm: Notis (ảnh camera), TrackAsia (bản đồ nền và lớp giao thông), MoMo (dịch vụ tra cứu phạt nguội), Petrolimex và Bộ Công Thương (giá nhiên liệu).</li><li>Nhà phát triển không kiểm soát nội dung, tính sẵn sàng và chính sách của các nguồn trên. Quyền sở hữu đối với Dữ liệu tham khảo thuộc về các chủ thể cung cấp tương ứng; việc Ứng dụng ghi nguồn nhằm bảo đảm tính minh bạch.</li></ol>
+<h2>Chương III. TÀI KHOẢN, GÓI PRO VÀ QUẢNG CÁO</h2>
+<h3>Điều 8. Tài khoản</h3>
+<ol><li>Tài khoản là không bắt buộc và chỉ cần để mua, khôi phục và quản lý Gói Pro. Tài khoản được tạo bằng cách đăng nhập qua Google hoặc Apple; bạn có trách nhiệm bảo mật tài khoản Google/Apple của mình.</li><li>Bạn có thể đăng xuất hoặc xóa Tài khoản bất cứ lúc nào tại màn hình Cài đặt. Để bảo vệ bạn, Ứng dụng yêu cầu đăng nhập lại trước khi xóa.</li><li>Việc xóa Tài khoản:<p class="point">a) gỡ liên kết đăng nhập, chấm dứt quyền lợi Gói Pro gắn với Tài khoản và thu hồi phiên đăng nhập Apple (nếu có);</p><p class="point">b) <strong>không</strong> tự động hủy gia hạn thuê bao trên Cửa hàng ứng dụng — bạn phải tự hủy theo khoản 4 Điều 9;</p><p class="point">c) <strong>không</strong> xóa dữ liệu Theo dõi phạt nguội tự động và dữ liệu lưu trên thiết bị — các dữ liệu này được xóa theo hướng dẫn tại Chính sách bảo vệ dữ liệu cá nhân.</p></li><li>Nhà phát triển có quyền tạm khóa hoặc chấm dứt Tài khoản vi phạm Điều 12, sau khi thông báo trong phạm vi hợp lý, trừ trường hợp cần ngăn chặn ngay hành vi gây hại.</li></ol>
+<h3>Điều 9. Gói Pro</h3>
+<ol><li><strong>Quyền lợi:</strong> quyền lợi của Gói Pro được mô tả tại màn hình Gói Pro ở thời điểm bạn đăng ký, bao gồm việc không hiển thị quảng cáo. Nhà phát triển có thể bổ sung quyền lợi; việc cắt giảm quyền lợi đã cam kết đối với kỳ thuê bao đang có hiệu lực chỉ được thực hiện khi có lý do chính đáng và được thông báo trước.</li><li><strong>Giá và thanh toán:</strong> giá, đơn vị tiền tệ và chu kỳ (tháng hoặc năm) hiển thị tại màn hình Gói Pro theo dữ liệu của Cửa hàng ứng dụng, đã bao gồm thuế theo chính sách của Cửa hàng ứng dụng. Việc thanh toán do Apple hoặc Google thực hiện qua tài khoản Cửa hàng ứng dụng của bạn.</li><li><strong>Gia hạn tự động:</strong> thuê bao <strong>tự động gia hạn</strong> vào cuối mỗi kỳ với cùng mức giá và chu kỳ, trừ khi bạn tắt gia hạn tự động ít nhất 24 giờ trước khi kỳ hiện tại kết thúc. Tài khoản Cửa hàng ứng dụng của bạn sẽ bị trừ phí gia hạn trong vòng 24 giờ trước khi kỳ hiện tại kết thúc.</li><li><strong>Hủy gia hạn:</strong> bạn quản lý và hủy gia hạn tại phần cài đặt thuê bao của Cửa hàng ứng dụng (iOS: Cài đặt &gt; Apple ID &gt; Đăng ký; Android: Google Play &gt; Thanh toán và gói đăng ký &gt; Gói đăng ký). Sau khi hủy, quyền lợi Gói Pro tiếp tục cho đến hết kỳ đã thanh toán.</li><li><strong>Hoàn tiền:</strong> yêu cầu hoàn tiền được giải quyết theo chính sách của Apple hoặc Google. Khi giao dịch được hoàn tiền, quyền lợi Gói Pro tương ứng chấm dứt.</li><li><strong>Khôi phục giao dịch:</strong> bạn có thể khôi phục Gói Pro đã mua bằng cách đăng nhập đúng Tài khoản và chọn khôi phục giao dịch. Gói Pro chia sẻ qua tính năng Chia sẻ trong gia đình (Family Sharing) không được hỗ trợ.</li><li><strong>Thay đổi giá:</strong> Nhà phát triển có thể thay đổi giá Gói Pro; giá mới áp dụng từ kỳ gia hạn tiếp theo sau khi bạn được Cửa hàng ứng dụng thông báo và, nếu Cửa hàng ứng dụng yêu cầu, sau khi bạn đồng ý.</li><li>Nhà phát triển có thể cấp quyền lợi Gói Pro không thu phí cho mục đích hỗ trợ hoặc bồi thường; việc cấp này không làm phát sinh nghĩa vụ thanh toán của bạn.</li></ol>
+<h3>Điều 10. Quảng cáo</h3>
+<ol><li>Phiên bản miễn phí của Ứng dụng hiển thị quảng cáo do Google AdMob cung cấp. Quảng cáo không hiển thị khi Gói Pro có hiệu lực.</li><li>Quảng cáo chỉ được cá nhân hóa khi bạn chấp thuận qua biểu mẫu chấp thuận của Google và (trên iOS) cho phép theo dõi qua App Tracking Transparency; chi tiết tại Chính sách bảo vệ dữ liệu cá nhân.</li><li>Nội dung quảng cáo do bên thứ ba cung cấp. Nhà phát triển không bảo đảm và không chịu trách nhiệm về hàng hóa, dịch vụ được quảng cáo; giao dịch giữa bạn và nhà quảng cáo thuộc trách nhiệm của các bên đó.</li></ol>
+<h2>Chương IV. QUYỀN VÀ NGHĨA VỤ CỦA CÁC BÊN</h2>
+<h3>Điều 11. Quyền của Người dùng</h3>
+<ol><li>Sử dụng các tính năng miễn phí và các quyền lợi Gói Pro đã đăng ký theo Điều khoản này.</li><li>Được cung cấp thông tin trung thực về dịch vụ, giá Gói Pro và việc xử lý dữ liệu cá nhân.</li><li>Thực hiện các quyền của chủ thể dữ liệu theo Chính sách bảo vệ dữ liệu cá nhân.</li><li>Phản ánh, khiếu nại theo Điều 20 và các quyền khác của người tiêu dùng theo quy định của pháp luật.</li></ol>
+<h3>Điều 12. Nghĩa vụ của Người dùng và hành vi bị nghiêm cấm</h3>
+<ol><li><strong>An toàn giao thông:</strong> bạn tuyệt đối <strong>không thao tác điện thoại khi đang lái xe hoặc điều khiển phương tiện</strong> tham gia giao thông. Mọi thao tác với Ứng dụng phải được thực hiện trước khi khởi hành, khi phương tiện đã dừng, đỗ an toàn đúng quy định, hoặc do người đi cùng thực hiện. Bạn phải tuân thủ Luật Trật tự, an toàn giao thông đường bộ, hệ thống báo hiệu đường bộ và hiệu lệnh của người điều khiển giao thông; thông tin từ Ứng dụng không thay thế và không làm giảm trách nhiệm này.</li><li><strong>Biển số tra cứu:</strong> bạn chịu trách nhiệm về tính chính xác của biển số mình nhập và chỉ tra cứu, đăng ký theo dõi phương tiện do mình sở hữu, sử dụng hợp pháp hoặc đã được chủ phương tiện đồng ý. Không tra cứu, theo dõi biển số của người khác khi chưa được người đó đồng ý.</li><li>Bạn <strong>tự chịu trách nhiệm</strong> về các quyết định và hậu quả phát sinh từ việc sử dụng Dữ liệu tham khảo.</li><li>Nghiêm cấm các hành vi sau:<p class="point">a) sử dụng Ứng dụng vào mục đích vi phạm pháp luật, xâm phạm quyền riêng tư, theo dõi, quấy rối người khác;</p><p class="point">b) thu thập dữ liệu tự động (scraping, bot), truy vấn hàng loạt, vượt qua giới hạn tần suất hoặc cơ chế bảo vệ của máy chủ;</p><p class="point">c) dịch ngược, can thiệp, sửa đổi Ứng dụng, khai thác lỗ hổng, tấn công từ chối dịch vụ đối với Ứng dụng hoặc hạ tầng của nguồn dữ liệu;</p><p class="point">d) khai thác thương mại, bán lại, phân phối lại Dữ liệu tham khảo hoặc Ứng dụng khi chưa được Nhà phát triển chấp thuận bằng văn bản;</p><p class="point">đ) giả mạo Ứng dụng là kênh của cơ quan nhà nước hoặc sử dụng Dữ liệu tham khảo để lừa đảo, đe dọa người khác.</p></li></ol>
+<h3>Điều 13. Quyền và nghĩa vụ của Nhà phát triển</h3>
+<ol><li>Cung cấp Ứng dụng theo mô tả tại Điều khoản này; công khai trung thực việc xử lý dữ liệu cá nhân.</li><li>Tiếp nhận và giải quyết phản ánh, khiếu nại của Người dùng theo Điều 20.</li><li>Áp dụng biện pháp bảo vệ dữ liệu cá nhân theo quy định của pháp luật.</li><li>Được từ chối phục vụ, giới hạn tần suất hoặc chặn truy cập đối với hành vi vi phạm Điều 12.</li><li>Được bảo trì, nâng cấp, thay đổi giao diện và tính năng của Ứng dụng.</li></ol>
+<h2>Chương V. SỞ HỮU TRÍ TUỆ</h2>
+<h3>Điều 14. Quyền sở hữu trí tuệ</h3>
+<ol><li>Mã nguồn, giao diện, tên gọi, biểu trưng và tài liệu của Ứng dụng thuộc quyền sở hữu của Nhà phát triển, được bảo hộ theo pháp luật về sở hữu trí tuệ.</li><li>Nhà phát triển cấp cho bạn quyền sử dụng Ứng dụng có giới hạn, không độc quyền, không chuyển nhượng, có thể hủy bỏ, cho mục đích cá nhân, phi thương mại, theo Điều khoản này và điều kiện của Cửa hàng ứng dụng.</li><li>Tên, biểu trưng, nhãn hiệu của cơ quan nhà nước, tổ chức cung cấp dữ liệu và nhà quảng cáo (nếu xuất hiện) thuộc quyền của chủ thể tương ứng.</li></ol>
+<h2>Chương VI. TRÁCH NHIỆM VÀ GIỚI HẠN TRÁCH NHIỆM</h2>
+<h3>Điều 15. Giới hạn trách nhiệm</h3>
+<ol><li>Ứng dụng và Dữ liệu tham khảo được cung cấp <strong>theo hiện trạng</strong> và <strong>theo khả năng sẵn có</strong>.</li><li>Trong phạm vi tối đa mà pháp luật cho phép, Nhà phát triển được <strong>miễn trừ trách nhiệm</strong> đối với thiệt hại trực tiếp hoặc gián tiếp phát sinh từ: sai lệch, chậm trễ, gián đoạn của Dữ liệu tham khảo; quyết định của Người dùng dựa trên Dữ liệu tham khảo; việc Người dùng vi phạm Điều 12; sự cố của nguồn dữ liệu, Cửa hàng ứng dụng, dịch vụ bên thứ ba, mạng viễn thông hoặc thiết bị của Người dùng.</li><li>Đối với Gói Pro, trách nhiệm của Nhà phát triển trong mọi trường hợp không vượt quá tổng số tiền bạn đã thanh toán cho Gói Pro trong 12 tháng liền trước thời điểm phát sinh thiệt hại, trừ trường hợp pháp luật có quy định khác.</li><li>Điều này không loại trừ hoặc hạn chế các quyền của người tiêu dùng mà pháp luật không cho phép loại trừ, hạn chế, cũng như trách nhiệm do lỗi cố ý của Nhà phát triển.</li></ol>
+<h3>Điều 16. Sự kiện bất khả kháng</h3>
+<p>Nhà phát triển không chịu trách nhiệm về việc chậm thực hiện hoặc không thực hiện nghĩa vụ do sự kiện bất khả kháng theo quy định của Bộ luật Dân sự, bao gồm thiên tai, dịch bệnh, sự cố hạ tầng Internet diện rộng, quyết định của cơ quan nhà nước, hoặc nguồn dữ liệu ngừng cung cấp.</p>
+<h3>Điều 17. Tạm ngừng, chấm dứt dịch vụ</h3>
+<ol><li>Nhà phát triển có thể tạm ngừng Ứng dụng hoặc từng tính năng để bảo trì, nâng cấp hoặc khi nguồn dữ liệu ngừng cung cấp.</li><li>Trường hợp chấm dứt vĩnh viễn Ứng dụng hoặc tính năng thuộc quyền lợi Gói Pro, Nhà phát triển thông báo trước ít nhất 30 ngày trong Ứng dụng và ngừng bán Gói Pro; việc hoàn tiền phần thời gian chưa sử dụng được thực hiện theo chính sách của Cửa hàng ứng dụng và quy định của pháp luật.</li><li>Bạn có thể chấm dứt sử dụng bất cứ lúc nào bằng cách xóa Tài khoản (nếu có), hủy gia hạn Gói Pro và gỡ cài đặt Ứng dụng.</li></ol>
+<h2>Chương VII. ĐIỀU KHOẢN THI HÀNH</h2>
+<h3>Điều 18. Bảo vệ dữ liệu cá nhân</h3>
+<p>Việc xử lý dữ liệu cá nhân của Người dùng thực hiện theo Chính sách bảo vệ dữ liệu cá nhân của Ứng dụng tại <a href="privacy.html">https://longkunz.github.io/giao-thong-vn-pages/privacy.html</a>.</p>
+<h3>Điều 19. Sửa đổi, bổ sung Điều khoản</h3>
+<ol><li>Nhà phát triển có thể sửa đổi, bổ sung Điều khoản này để phù hợp với thay đổi của Ứng dụng, chính sách của Cửa hàng ứng dụng hoặc quy định pháp luật.</li><li>Bản sửa đổi được công bố tại địa chỉ công bố của văn bản kèm mã định danh nội dung và ngày hiệu lực mới.</li><li>Đối với thay đổi trọng yếu, Ứng dụng hiển thị lại màn hình chấp thuận; bạn cần đồng ý với bản mới để tiếp tục sử dụng. Nếu không đồng ý, bạn ngừng sử dụng Ứng dụng và hủy gia hạn Gói Pro (nếu có).</li></ol>
+<h3>Điều 20. Luật áp dụng và giải quyết tranh chấp</h3>
+<ol><li>Điều khoản này được điều chỉnh và giải thích theo pháp luật nước Cộng hòa xã hội chủ nghĩa Việt Nam.</li><li>Phản ánh, khiếu nại được gửi tới thư điện tử tại Điều 3. Nhà phát triển xác nhận tiếp nhận và phản hồi trong thời hạn hợp lý, không chậm hơn thời hạn pháp luật quy định.</li><li>Tranh chấp được ưu tiên giải quyết bằng thương lượng, hòa giải. Trường hợp không giải quyết được, một trong các bên có quyền yêu cầu Tòa án nhân dân có thẩm quyền của Việt Nam giải quyết theo quy định của pháp luật.</li><li>Nếu một quy định của Điều khoản này bị tuyên vô hiệu, các quy định còn lại vẫn có hiệu lực.</li></ol>
+<h3>Điều 21. Hiệu lực</h3>
+<ol><li>Điều khoản này có hiệu lực kể từ ngày 15/11/2026 và thay thế Điều khoản sử dụng phiên bản 1.0.</li><li>Mọi thắc mắc xin gửi về: <strong>Lê Văn Long (Longkunz)</strong> — thư điện tử <a href="mailto:mrlongdeveloper@gmail.com">mrlongdeveloper@gmail.com</a>.</li></ol>
+    </main>
     <footer>
-      <p>© 2026 Giao Thông VN Live. Tài liệu lưu trữ công khai trên GitHub Pages.</p>
-      <p>Mã định danh nội dung: <strong>giao-thong-vn-terms-v1-official</strong></p>
-      <p><a href="privacy.html">Chính sách bảo mật</a> • <a href="contact.html">Liên hệ &amp; Góp ý</a></p>
+      <p>Mã định danh nội dung: <strong id="content-id">giao-thong-vn-terms-v2-official</strong> · Ngày hiệu lực: <strong>2026-11-15</strong></p>
+      <p><a href="privacy.html">Chính sách bảo vệ dữ liệu cá nhân</a> · <a href="contact.html">Liên hệ</a> · <a href="mailto:mrlongdeveloper@gmail.com">mrlongdeveloper@gmail.com</a></p>
+      <p>© 2026 Lê Văn Long (Longkunz). Bảo lưu mọi quyền.</p>
     </footer>
   </div>
 </body>
