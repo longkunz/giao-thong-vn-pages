@@ -1,277 +1,97 @@
 <!DOCTYPE html>
-<html lang="vi" data-content-id="giao-thong-vn-privacy-v1-official" data-effective-date="2026-11-08">
+<html lang="vi" data-content-id="giao-thong-vn-privacy-v2-official" data-effective-date="2026-11-15">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#0284c7">
-  <meta name="description" content="Chính sách bảo mật quyền riêng tư ứng dụng Giao Thông VN Live">
-  <title>Chính sách bảo mật - Giao Thông VN Live</title>
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Chính sách bảo vệ dữ liệu cá nhân của ứng dụng Giao Thông VN Live">
+  <title>Chính sách bảo vệ dữ liệu cá nhân - Giao Thông VN Live</title>
   <style>
     :root {
-      --bg: #ffffff;
-      --card-bg: #f8fafc;
-      --text: #0f172a;
-      --text-muted: #64748b;
-      --primary: #0284c7;
-      --border: #e2e8f0;
-      --badge-bg: #e0f2fe;
-      --badge-text: #0369a1;
+      --bg: #ffffff; --card: #f8fafc; --text: #0f172a; --muted: #475569;
+      --primary: #0369a1; --border: #e2e8f0;
     }
     @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0b1120;
-        --card-bg: #1e293b;
-        --text: #f1f5f9;
-        --text-muted: #94a3b8;
-        --primary: #38bdf8;
-        --border: #334155;
-        --badge-bg: #082f49;
-        --badge-text: #7dd3fc;
-      }
+      :root { --bg: #0b1120; --card: #1e293b; --text: #f1f5f9; --muted: #94a3b8; --primary: #7dd3fc; --border: #334155; }
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 16px; background: var(--bg); color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      padding: 16px;
-      -webkit-font-smoothing: antialiased;
-    }
+      line-height: 1.65; -webkit-font-smoothing: antialiased; }
     .container { max-width: 760px; margin: 0 auto; padding-bottom: 48px; }
-    header { padding: 20px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
-    .app-brand {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 0.95rem; font-weight: 600; color: var(--primary);
-      text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
-    }
-    h1 { font-size: 1.75rem; line-height: 1.25; font-weight: 700; margin-bottom: 12px; color: var(--text); }
-    .meta-bar { display: flex; flex-wrap: wrap; gap: 10px; font-size: 0.85rem; color: var(--text-muted); align-items: center; }
-    .badge {
-      display: inline-block; padding: 2px 8px; border-radius: 9999px;
-      font-weight: 600; font-size: 0.75rem;
-      background-color: var(--badge-bg); color: var(--badge-text);
-    }
-    h2 {
-      font-size: 1.25rem; font-weight: 600; margin: 28px 0 12px;
-      color: var(--primary); border-bottom: 1px solid var(--border); padding-bottom: 6px;
-    }
-    h3 { font-size: 1.05rem; font-weight: 600; margin: 18px 0 8px; color: var(--text); }
-    p { margin-bottom: 14px; font-size: 0.98rem; }
-    ul, ol { padding-left: 24px; margin-bottom: 16px; font-size: 0.98rem; }
+    header { text-align: center; padding: 16px 0 12px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .brand { font-size: 0.85rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    h1 { font-size: 1.5rem; line-height: 1.3; margin: 8px 0 4px; text-transform: uppercase; }
+    .subtitle { font-weight: 600; margin: 0; }
+    h2 { font-size: 1.1rem; margin: 28px 0 8px; text-align: center; text-transform: uppercase; color: var(--primary); }
+    h3 { font-size: 1rem; margin: 18px 0 6px; }
+    p, li, td, th { font-size: 0.97rem; }
+    p { margin: 0 0 12px; text-align: justify; }
+    ol, ul { padding-left: 24px; margin: 0 0 14px; }
     li { margin-bottom: 6px; }
-    .card {
-      background-color: var(--card-bg); border: 1px solid var(--border);
-      border-radius: 12px; padding: 16px; margin: 16px 0;
-    }
-    .card h3 { margin-top: 0; color: var(--primary); }
+    .point { margin: 4px 0 4px 4px; }
+    .table-wrap { overflow-x: auto; margin: 0 0 16px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid var(--border); padding: 6px 8px; text-align: left; vertical-align: top; }
+    th { background: var(--card); }
+    code { font-size: 0.88em; overflow-wrap: anywhere; }
     a { color: var(--primary); overflow-wrap: anywhere; }
-    footer {
-      margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border);
-      text-align: center; font-size: 0.85rem; color: var(--text-muted);
-    }
+    footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border); text-align: center; font-size: 0.85rem; color: var(--muted); }
   </style>
 </head>
-<body>
+<body data-content-id="giao-thong-vn-privacy-v2-official">
   <div class="container">
     <header>
-      <div class="app-brand">
-        <span>🚦 Giao Thông VN Live</span>
-      </div>
-      <h1>Chính sách bảo mật quyền riêng tư</h1>
-      <div class="meta-bar">
-        <span class="badge">BẢN CHÍNH THỨC</span>
-        <span id="privacy-content-id">Mã định danh: <strong>giao-thong-vn-privacy-v1-official</strong></span>
-        <span>•</span>
-        <span id="privacy-effective-date">Ngày hiệu lực: <strong>2026-11-08</strong> (08/11/2026)</span>
-      </div>
+      <div class="brand">Giao Thông VN Live</div>
+      <h1>CHÍNH SÁCH BẢO VỆ DỮ LIỆU CÁ NHÂN</h1>
+      <p class="subtitle">Ứng dụng Giao Thông VN Live</p>
     </header>
-
-    <section>
-      <h2>1. Cam kết chung và chủ thể chịu trách nhiệm</h2>
-      <p>
-        <strong>Giao Thông VN Live</strong> là dự án phần mềm nguồn mở, phi lợi nhuận, do lập trình viên cá nhân độc lập
-        <strong>Lê Văn Long (Longkunz)</strong> phát triển và duy trì vì cộng đồng người tham gia giao thông tại Việt Nam.
-        Chính sách này giải thích đúng với thực tế kỹ thuật hiện tại của ứng dụng: dữ liệu nào được gửi lên máy chủ,
-        dữ liệu nào chỉ lưu trên thiết bị, và dữ liệu nào ứng dụng hoàn toàn không thu thập.
-      </p>
-      <ul>
-        <li><strong>Đại diện quản trị dữ liệu:</strong> Lê Văn Long (Longkunz)</li>
-        <li><strong>Email liên hệ bảo vệ dữ liệu &amp; quyền riêng tư:</strong> <a href="mailto:mrlongdeveloper@gmail.com">mrlongdeveloper@gmail.com</a></li>
-        <li><strong>Địa chỉ liên hệ:</strong> Liên hệ qua email <a href="mailto:mrlongdeveloper@gmail.com">mrlongdeveloper@gmail.com</a> và trang dự án <a href="https://github.com/longkunz/giao-thong-vn-pages">github.com/longkunz/giao-thong-vn-pages</a> (dự án cá nhân phát triển độc lập, không công bố địa chỉ trụ sở)</li>
-        <li><strong>Điều khoản sử dụng đi kèm:</strong> <a href="terms.html">terms.html</a></li>
-      </ul>
-      <p>
-        <strong>Nguyên tắc trách nhiệm sử dụng (áp dụng cho toàn bộ ứng dụng và chính sách này):</strong>
-        Giao Thông VN Live chỉ là công cụ phần mềm hiển thị dữ liệu tham khảo công khai; ứng dụng
-        <strong>không phải là kênh chính thức của cơ quan nhà nước</strong> và mọi thông tin hiển thị
-        <strong>không thay thế thông báo của cơ quan có thẩm quyền</strong> (bao gồm thông báo vi phạm hay quyết định xử phạt chính thức).
-        Dữ liệu camera và kết quả tra cứu phạt nguội <strong>không được bảo đảm chính xác, đầy đủ hay tức thời</strong>,
-        vì phụ thuộc vào nguồn dữ liệu công khai và trạng thái vận hành của hệ thống tại hiện trường.
-        Người dùng <strong>tự chịu trách nhiệm về mọi hậu quả</strong> phát sinh từ việc sử dụng thông tin trong ứng dụng,
-        bao gồm việc tuyệt đối <strong>không thao tác điện thoại khi đang lái xe hay điều khiển phương tiện</strong> tham gia giao thông.
-        Trong phạm vi tối đa mà pháp luật cho phép, nhà phát triển được <strong>miễn trừ trách nhiệm</strong> đối với mọi thiệt hại
-        trực tiếp hoặc gián tiếp phát sinh từ dữ liệu hiển thị hoặc từ việc sử dụng ứng dụng.
-      </p>
-      <p>
-        Chính sách được biên soạn tuân thủ Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân và
-        Apple App Store Review Guidelines mục 5.1.1 (Data Collection and Storage).
-      </p>
-    </section>
-
-    <section>
-      <h2>2. Ứng dụng không thu thập những gì</h2>
-      <ul>
-        <li><strong>Không yêu cầu tài khoản:</strong> ứng dụng không yêu cầu đăng ký tài khoản, đăng nhập, số điện thoại hay email để sử dụng.</li>
-        <li><strong>Không thu thập dữ liệu định danh:</strong> không yêu cầu họ tên, số CCCD/CMND/hộ chiếu, danh bạ, thư viện ảnh, micrô hay dữ liệu sinh trắc học.</li>
-        <li><strong>Không quảng cáo:</strong> phiên bản hiện tại của ứng dụng không hiển thị quảng cáo và không tích hợp mạng quảng cáo nào.</li>
-        <li><strong>Không theo dõi (no tracking):</strong> ứng dụng không dùng công cụ phân tích hành vi (analytics) để theo dõi người dùng,
-          không chia sẻ dữ liệu cho nhà quảng cáo hay bên môi giới dữ liệu. Thư viện Firebase Analytics bị loại khỏi quá trình liên kết native của ứng dụng.
-          Tính năng theo dõi phạt nguội tự động ở mục 3.6 là ngoại lệ DUY NHẤT cho "không theo dõi" — và chỉ hoạt động khi bạn đồng ý rõ ràng.</li>
-        <li><strong>Không theo dõi vị trí nền:</strong> ứng dụng không yêu cầu quyền vị trí chạy ngầm và không ghi nhận lịch sử hành trình di chuyển.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>3. Dữ liệu gửi lên máy chủ khi bạn sử dụng tính năng (và bên thứ ba nhận dữ liệu)</h2>
-      <h3>3.1. Tọa độ vị trí khi xem camera xung quanh</h3>
-      <p>
-        Khi bạn mở Bản đồ hoặc bật lọc camera lân cận (“Near-me”), ứng dụng xin quyền vị trí ở mức
-        <strong>Khi đang sử dụng ứng dụng</strong>. Tọa độ vị trí (vĩ độ, kinh độ) được gửi qua HTTPS tới máy chủ ứng dụng
-        trong yêu cầu lấy danh sách camera (<code>GET /api/cameras</code>) chỉ để tính khoảng cách và sắp xếp camera gần bạn.
-        Máy chủ chỉ xử lý tọa độ trong bộ nhớ tạm, <strong>không lưu trữ tọa độ vào cơ sở dữ liệu</strong>, và hệ thống ghi log
-        tự động che giấu/loại bỏ các tham số tọa độ khỏi nhật ký truy cập (access log redaction).
-      </p>
-      <h3>3.2. Biển số xe khi tra cứu phạt nguội</h3>
-      <p>
-        Biển số xe bạn nhập được gửi tới máy chủ ứng dụng qua HTTPS để tra cứu phạt nguội, kèm loại phương tiện bạn chọn.
-        Máy chủ chuyển tiếp truy vấn tới bên thứ ba là <strong>MoMo</strong> — cụ thể là dịch vụ MoMo Traffic Violation API
-        (máy chủ <code>aws.momo.vn</code>), là dịch vụ đối tác kết nối tới nguồn dữ liệu của Cổng thông tin điện tử
-        Cục Cảnh sát giao thông (csgt.vn) và cổng dịch vụ công. Như vậy, bên thứ ba trực tiếp nhận biển số trong quá trình
-        tra cứu là MoMo, không phải Cục Cảnh sát giao thông nhận trực tiếp từ thiết bị của bạn.
-        Đối với lần tra cứu trực tiếp này (không bật theo dõi), máy chủ <strong>không lưu kết quả tra cứu thành hồ sơ</strong>;
-        kết quả chỉ hiển thị trực tiếp trên màn hình của bạn. Riêng khi bạn bật theo dõi phạt nguội tự động,
-        máy chủ lưu biển số và ảnh chụp mã vi phạm theo mục 3.6.
-        Bạn chịu trách nhiệm về tính chính xác của biển số mình tra cứu và chỉ tra cứu biển số của người khác khi đã được người đó đồng ý.
-      </p>
-      <h3>3.3. TrackAsia — bản đồ nền trong WebView</h3>
-      <p>
-        Lớp bản đồ nền hiển thị trong ứng dụng được tải <strong>trực tiếp từ thiết bị của bạn</strong> tới máy chủ của
-        <strong>TrackAsia</strong> (<code>maps.track-asia.com</code>): thành phần bản đồ (WebView) tải tệp định dạng bản đồ
-        (style) và các ô bản đồ (tiles) từ TrackAsia, không qua máy chủ của chúng tôi. Khi bản đồ được căn giữa theo vị trí
-        hiện tại của bạn (ví dụ khi bật “Near-me”), các yêu cầu tải ô bản đồ tương ứng với vùng đang hiển thị sẽ cho TrackAsia
-        biết <strong>địa chỉ IP của thiết bị</strong> và <strong>tọa độ ô/vùng bản đồ đang hiển thị, tức vị trí gần đúng của bạn</strong>.
-        TrackAsia là một bên thứ ba nhận dữ liệu theo nghĩa này; việc TrackAsia xử lý dữ liệu đó tuân theo chính sách riêng của TrackAsia.
-        Chúng tôi không gửi tọa độ GPS chính xác của bạn cho TrackAsia qua máy chủ của chúng tôi và không dùng dữ liệu bản đồ để theo dõi hay quảng cáo.
-      </p>
-      <h3>3.4. Notis — ảnh tĩnh camera (snapshot)</h3>
-      <p>
-        Ảnh tĩnh (snapshot) của camera được tải <strong>trực tiếp từ thiết bị của bạn</strong> tới máy chủ của
-        <strong>Notis</strong> (<code>api.notis.vn</code>): máy chủ của chúng tôi cung cấp cho ứng dụng địa chỉ ảnh
-        dạng <code>https://api.notis.vn/v4/cameras/&lt;mã camera&gt;/snapshot</code> và thành phần hiển thị ảnh trong
-        ứng dụng tải ảnh trực tiếp từ địa chỉ này, không qua máy chủ của chúng tôi. Khi ảnh được tải, các yêu cầu đó sẽ cho Notis
-        biết <strong>địa chỉ IP của thiết bị</strong> và <strong>mã camera bạn đang xem, từ đó suy ra khu vực bạn quan tâm</strong>.
-        Notis là một bên thứ ba nhận dữ liệu theo nghĩa này; việc Notis xử lý dữ liệu đó tuân theo chính sách riêng của Notis.
-        Chúng tôi không gửi tọa độ GPS chính xác, biển số xe hay thông tin định danh của bạn cho Notis qua máy chủ của chúng tôi
-        và không dùng dữ liệu ảnh camera để theo dõi hay quảng cáo.
-      </p>
-      <h3>3.5. Firebase Remote Config</h3>
-      <p>
-        Ứng dụng sử dụng <strong>Firebase Remote Config</strong> (Google Firebase) chỉ để nhận các giá trị cấu hình phát hành:
-        phiên bản ứng dụng mới nhất/tối thiểu và liên kết cửa hàng (store URL), phục vụ thông báo cập nhật phiên bản.
-        Remote Config <strong>không được dùng để định danh, theo dõi hành vi hay quảng cáo</strong>. Khi module native Firebase
-        không khả dụng (ví dụ bản chạy thử), ứng dụng dùng giá trị mặc định cục bộ và không gửi dữ liệu nào.
-      </p>
-      <h3>3.6. Theo dõi phạt nguội tự động (chỉ khi bạn đồng ý rõ ràng)</h3>
-      <p>
-        Tính năng "Theo dõi phạt nguội tự động" chỉ hoạt động khi bạn chủ động bật tính năng và đồng ý rõ ràng
-        cho phép lưu biển số trên máy chủ. Nếu bạn không đồng ý, biển số chỉ được dùng cho lần tra cứu trực
-        tiếp theo mục 3.2 và không được lưu trên máy chủ để theo dõi.
-      </p>
-      <ul>
-        <li><strong>Dữ liệu lưu trên máy chủ (tối thiểu hoá):</strong> khi bạn đồng ý, máy chủ chỉ lưu: biển số xe,
-          loại phương tiện, mã định danh cài đặt ẩn danh (install ID — không gắn với tài khoản hay thông tin
-          định danh cá nhân), mã thông báo đẩy (push token) của thiết bị và ảnh chụp các mã vi phạm gần nhất
-          của chính biển số đó (để so sánh, tránh thông báo trùng). Chúng tôi <strong>không</strong> lưu vị trí,
-          hành trình hay bất kỳ dữ liệu nào khác cho tính năng này.</li>
-        <li><strong>Mã hoá khi lưu trữ:</strong> biển số và push token được mã hoá (AES-256-GCM) khi lưu trữ phía
-          máy chủ và chỉ được giải mã trong bộ nhớ khi thực hiện tra cứu định kỳ hoặc gửi thông báo.</li>
-        <li><strong>Mục đích và tần suất tra cứu định kỳ:</strong> máy chủ tra cứu định kỳ (mặc định 1 lần/ngày
-          cho mỗi biển số đang bật theo dõi) tới nguồn dữ liệu phạt nguội công khai và chỉ gửi thông báo đẩy
-          khi xuất hiện vi phạm mới so với lần tra trước. Lượt tra đầu tiên của một biển mới đăng ký
-          chỉ lập ảnh chụp ban đầu, không gửi thông báo cho các vi phạm đã có từ trước. Nội dung thông báo chỉ chứa
-          biển số đã che (ví dụ "51A***45"), không chứa biển số đầy đủ. Push token chỉ được chia sẻ với hạ
-          tầng gửi thông báo (Expo Push Service / FCM / APNs) đúng mức cần thiết để chuyển thông báo tới
-          thiết bị của bạn; ngoại trừ việc gửi biển số tới MoMo để tra cứu như mô tả tại Mục 3.2, dữ liệu theo dõi không được chia sẻ cho bất kỳ bên thứ ba nào khác.</li>
-        <li><strong>Quyền thông báo:</strong> thông báo đẩy chỉ được gửi khi bạn đã cấp quyền thông báo trên thiết bị.
-          Nếu bạn tắt quyền, ứng dụng hiển thị trạng thái vi phạm trong ứng dụng thay vì gửi thông báo.</li>
-        <li><strong>Kiểm soát và xoá dữ liệu theo dõi:</strong> bạn có thể tắt theo dõi từng biển số, hoặc rút lại
-          đồng ý và <strong>xoá toàn bộ dữ liệu theo dõi của mình khỏi máy chủ</strong> bất cứ lúc nào ngay trong
-          mục Theo dõi phạt nguội tại màn hình tra cứu. Khi rút đồng ý, toàn bộ bản ghi theo dõi gắn với mã cài
-          đặt của bạn bị xoá triệt để khỏi máy chủ và việc tra cứu định kỳ dừng lại.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>4. Dữ liệu chỉ lưu cục bộ trên thiết bị (Local Storage)</h2>
-      <p>
-        Các dữ liệu sau được lưu hoàn toàn trên thiết bị của bạn bằng AsyncStorage, không đồng bộ và không gửi về máy chủ của chúng tôi:
-      </p>
-      <ul>
-        <li><strong>Lịch sử tra cứu biển số (Vehicle Query History):</strong> các biển số bạn đã tra cứu, để hỗ trợ điền nhanh lần sau.</li>
-        <li><strong>Camera yêu thích (Favorite Camera):</strong> danh sách mã camera bạn đánh dấu yêu thích để ưu tiên hiển thị.</li>
-        <li><strong>Tùy chọn giao diện (Theme Mode):</strong> lựa chọn Sáng / Tối / Theo hệ thống.</li>
-        <li><strong>Bản ghi đồng thuận điều khoản:</strong> mã nội dung văn bản (<code>contentId</code>) và thời điểm bạn đồng ý (<code>consentedAt</code>).</li>
-        <li><strong>Bộ nhớ đệm ảnh camera và khóa API bản đồ</strong> (nếu bạn tự nhập khóa TrackAsia của riêng mình).</li>
-      </ul>
-      <p>
-        Bạn có thể xóa toàn bộ dữ liệu cục bộ bất cứ lúc nào bằng chức năng xóa bộ nhớ đệm/lịch sử trong mục Cài đặt của ứng dụng,
-        hoặc bằng cách gỡ cài đặt ứng dụng.
-      </p>
-    </section>
-
-    <section>
-      <h2>5. Thời gian lưu trữ dữ liệu</h2>
-      <ul>
-        <li><strong>Dữ liệu gửi lên máy chủ:</strong> tọa độ vị trí chỉ tồn tại trong bộ nhớ tạm trong lúc xử lý yêu cầu và không được lưu vào cơ sở dữ liệu; biển số của lần tra cứu trực tiếp không được lưu thành hồ sơ gắn với danh tính cá nhân. Riêng dữ liệu theo dõi phạt nguội tự động (biển số đã mã hoá, push token, ảnh chụp mã vi phạm) được lưu theo mục 3.6 cho tới khi bạn tắt theo dõi từng biển hoặc rút đồng ý và xoá toàn bộ dữ liệu theo dõi. Nhật ký truy cập máy chủ (nếu có) được lưu trong thời gian ngắn phục vụ vận hành kỹ thuật và đã loại bỏ tham số tọa độ.</li>
-        <li><strong>Dữ liệu lưu cục bộ trên thiết bị:</strong> được lưu cho tới khi bạn tự xóa trong mục Cài đặt, xóa dữ liệu ứng dụng, hoặc gỡ cài đặt ứng dụng.</li>
-        <li><strong>Dữ liệu phía bên thứ ba:</strong> tuân theo chính sách lưu trữ của chính bên thứ ba đó (Google Firebase, MoMo — MoMo Traffic Violation API, TrackAsia — dịch vụ bản đồ nền nhận địa chỉ IP và vùng bản đồ hiển thị như mô tả ở mục 3.3, Notis — dịch vụ ảnh tĩnh camera nhận địa chỉ IP và mã camera đang xem như mô tả ở mục 3.4, Cổng thông tin Cục Cảnh sát giao thông/dịch vụ đối tác tra cứu).</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>6. Quyền của bạn</h2>
-      <ul>
-        <li><strong>Quyền được biết:</strong> toàn bộ hoạt động xử lý dữ liệu được mô tả công khai tại chính trang này.</li>
-        <li><strong>Quyền đồng ý và rút lại đồng ý:</strong> bạn có thể từ chối hoặc thu hồi quyền vị trí bất cứ lúc nào trong Cài đặt hệ thống của thiết bị; ứng dụng vẫn cho phép xem camera theo tỉnh/thành phố khi không cấp quyền vị trí. Riêng tính năng theo dõi phạt nguội tự động (mục 3.6) chỉ bật khi bạn đồng ý rõ ràng trong ứng dụng, và bạn có thể rút đồng ý bất cứ lúc nào ngay trong mục Theo dõi phạt nguội.</li>
-        <li><strong>Quyền xóa dữ liệu:</strong> xóa lịch sử tra cứu, camera yêu thích và bộ nhớ đệm ngay trong ứng dụng hoặc khi gỡ cài đặt. Đối với dữ liệu theo dõi phạt nguội tự động lưu trên máy chủ (mục 3.6), bạn có thể rút đồng ý và xoá toàn bộ dữ liệu theo dõi khỏi máy chủ ngay trong ứng dụng.</li>
-        <li><strong>Quyền khiếu nại, phản ánh:</strong> gửi email tới <a href="mailto:mrlongdeveloper@gmail.com">mrlongdeveloper@gmail.com</a>.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>7. An toàn dữ liệu và trẻ em</h2>
-      <p>
-        Mọi kết nối giữa ứng dụng và máy chủ đều dùng HTTPS (TLS). Máy chủ áp dụng
-        cơ chế che giấu tọa độ trong log như mô tả ở mục 3.1. Ứng dụng là tiện ích giao thông dành cho người tham gia giao thông,
-        không hướng tới trẻ em dưới 16 tuổi và không cố ý thu thập dữ liệu cá nhân của trẻ em.
-      </p>
-    </section>
-
-    <section>
-      <h2>8. Thay đổi chính sách</h2>
-      <p>
-        Khi thực tế thu thập dữ liệu của ứng dụng thay đổi (ví dụ tích hợp thêm dịch vụ bên thứ ba), chính sách này sẽ được cập nhật
-        và công bố tại đúng địa chỉ này trước khi phiên bản ứng dụng tương ứng được phát hành, kèm mã định danh nội dung và ngày hiệu lực mới.
-        Mọi thay đổi được quản lý công khai tại kho
-        <a href="https://github.com/longkunz/giao-thong-vn-pages">github.com/longkunz/giao-thong-vn-pages</a>.
-      </p>
-    </section>
-
+    <main>
+<div class="table-wrap"><table><thead><tr><th>Thông tin văn bản</th><th></th></tr></thead><tbody><tr><td>Phiên bản</td><td>2.0 (bản chính thức)</td></tr><tr><td>Mã định danh nội dung</td><td><code>giao-thong-vn-privacy-v2-official</code></td></tr><tr><td>Ngày ban hành</td><td>15/11/2026</td></tr><tr><td>Ngày có hiệu lực</td><td>15/11/2026 (<code>2026-11-15</code>)</td></tr><tr><td>Văn bản được thay thế</td><td>Chính sách bảo mật phiên bản 1.0 (<code>giao-thong-vn-privacy-v1-official</code>, hiệu lực từ 08/11/2026)</td></tr><tr><td>Địa chỉ công bố</td><td><a href="privacy.html">https://longkunz.github.io/giao-thong-vn-pages/privacy.html</a></td></tr><tr><td>Văn bản liên quan</td><td>Điều khoản sử dụng: <a href="terms.html">https://longkunz.github.io/giao-thong-vn-pages/terms.html</a></td></tr></tbody></table></div>
+<p><strong>Căn cứ pháp lý:</strong></p>
+<ul><li>Bộ luật Dân sự số 91/2015/QH13;</li><li>Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15;</li><li>Nghị định số 356/2025/NĐ-CP của Chính phủ quy định chi tiết một số điều và biện pháp thi hành Luật Bảo vệ dữ liệu cá nhân;</li><li>Luật Giao dịch điện tử số 20/2023/QH15;</li><li>Luật Bảo vệ quyền lợi người tiêu dùng số 19/2023/QH15;</li><li>Luật An ninh mạng số 24/2018/QH14;</li><li>Chính sách nhà phát triển của Apple App Store (Mục 5.1 — Quyền riêng tư) và Google Play (Chính sách Dữ liệu người dùng).</li></ul>
+<h2>Chương I. QUY ĐỊNH CHUNG</h2>
+<h3>Điều 1. Phạm vi điều chỉnh và đối tượng áp dụng</h3>
+<ol><li>Chính sách này quy định loại dữ liệu cá nhân được xử lý, mục đích, cách thức, thời hạn xử lý, các bên nhận dữ liệu, biện pháp bảo vệ và quyền của chủ thể dữ liệu khi sử dụng ứng dụng di động Giao Thông VN Live trên iOS và Android, các tiện ích màn hình chính (widget) và máy chủ phục vụ ứng dụng (sau đây gọi chung là <strong>"Ứng dụng"</strong>).</li><li>Chính sách áp dụng đối với mọi cá nhân cài đặt, truy cập hoặc sử dụng Ứng dụng (sau đây gọi là <strong>"Người dùng"</strong> hoặc <strong>"bạn"</strong>).</li><li>Chính sách này là một bộ phận không tách rời của Điều khoản sử dụng Ứng dụng. Trường hợp có sự khác nhau giữa hai văn bản về việc xử lý dữ liệu cá nhân, Chính sách này được ưu tiên áp dụng.</li><li>Chính sách này không điều chỉnh việc xử lý dữ liệu do các bên thứ ba tự thực hiện theo chính sách riêng của họ, bao gồm Apple, Google, các cửa hàng ứng dụng và các nguồn dữ liệu nêu tại Điều 8.</li></ol>
+<h3>Điều 2. Giải thích từ ngữ</h3>
+<p>Trong Chính sách này, các từ ngữ dưới đây được hiểu như sau:</p>
+<ol><li><strong>Dữ liệu cá nhân</strong> là dữ liệu số hoặc thông tin dưới dạng khác xác định hoặc giúp xác định một con người cụ thể, theo quy định của Luật Bảo vệ dữ liệu cá nhân.</li><li><strong>Bên kiểm soát và xử lý dữ liệu cá nhân</strong> là cá nhân quyết định mục đích, phương tiện và trực tiếp xử lý dữ liệu cá nhân của Người dùng trong Ứng dụng, được xác định tại Điều 3.</li><li><strong>Mã cài đặt (Install ID)</strong> là chuỗi định danh ngẫu nhiên do Ứng dụng tạo ra trên thiết bị khi cài đặt, có dạng <code>install-&lt;UUID&gt;</code>, không chứa họ tên, số điện thoại hay thông tin định danh trực tiếp của Người dùng.</li><li><strong>Tài khoản</strong> là tài khoản Người dùng tạo bằng cách đăng nhập qua Google hoặc Apple (Sign in with Apple) trong Ứng dụng.</li><li><strong>Gói Pro</strong> là gói thuê bao trả phí có gia hạn tự động, được mua qua App Store hoặc Google Play.</li><li><strong>Theo dõi phạt nguội tự động (Fine Watch)</strong> là tính năng máy chủ định kỳ tra cứu phạt nguội cho biển số do Người dùng đăng ký và gửi thông báo đẩy khi có vi phạm mới.</li><li><strong>Mã thông báo đẩy (push token)</strong> là mã do hệ điều hành và dịch vụ Expo cấp để gửi thông báo tới đúng thiết bị.</li><li><strong>Dữ liệu lưu cục bộ</strong> là dữ liệu chỉ lưu trong bộ nhớ của Ứng dụng trên thiết bị (AsyncStorage, vùng dữ liệu dùng chung với widget), không được gửi về máy chủ của Ứng dụng.</li></ol>
+<h3>Điều 3. Bên kiểm soát và xử lý dữ liệu cá nhân</h3>
+<ol><li>Bên kiểm soát và xử lý dữ liệu cá nhân: <strong>Ông Lê Văn Long (Longkunz)</strong>, nhà phát triển cá nhân độc lập, chủ sở hữu và vận hành Ứng dụng.</li><li>Thư điện tử tiếp nhận yêu cầu về dữ liệu cá nhân: <a href="mailto:mrlongdeveloper@gmail.com">mrlongdeveloper@gmail.com</a>.</li><li>Trang liên hệ: <a href="contact.html">https://longkunz.github.io/giao-thong-vn-pages/contact.html</a>.</li><li>Ứng dụng là sản phẩm độc lập, <strong>không phải kênh chính thức của cơ quan nhà nước</strong> và không được cơ quan nhà nước nào ủy quyền xử lý dữ liệu cá nhân.</li></ol>
+<h2>Chương II. DỮ LIỆU CÁ NHÂN ĐƯỢC XỬ LÝ</h2>
+<h3>Điều 4. Nguyên tắc xử lý</h3>
+<ol><li>Dữ liệu cá nhân chỉ được xử lý đúng mục đích đã thông báo tại Chính sách này; chỉ thu thập ở mức tối thiểu cần thiết cho từng tính năng.</li><li>Các tính năng cốt lõi (xem camera, tra cứu phạt nguội, xem giá nhiên liệu) sử dụng được <strong>mà không cần Tài khoản</strong>.</li><li>Dữ liệu không được mua bán dưới bất kỳ hình thức nào.</li><li>Việc xử lý được thực hiện trên cơ sở sự đồng ý của Người dùng (thể hiện bằng việc chấp thuận Điều khoản sử dụng, cấp quyền trên thiết bị hoặc bật từng tính năng) và các trường hợp không cần sự đồng ý theo quy định của pháp luật về bảo vệ dữ liệu cá nhân.</li></ol>
+<h3>Điều 5. Loại dữ liệu, mục đích và cách thức xử lý theo từng tính năng</h3>
+<ol><li><strong>Xem camera gần vị trí và bản đồ</strong><p class="point">a) Dữ liệu: tọa độ vị trí (vĩ độ, kinh độ) của thiết bị ở mức độ chính xác cân bằng, chỉ khi bạn cấp quyền vị trí <strong>"Khi dùng ứng dụng"</strong>;</p><p class="point">b) Mục đích: đặt tâm bản đồ, tính khoảng cách và sắp xếp camera gần bạn;</p><p class="point">c) Cách thức: tọa độ được gửi qua HTTPS tới máy chủ của Ứng dụng trong yêu cầu lấy danh sách camera (<code>GET /api/cameras</code>), chỉ được xử lý trong bộ nhớ tạm và <strong>không lưu vào cơ sở dữ liệu</strong>; nhật ký truy cập của máy chủ tự động che các tham số tọa độ. Ứng dụng <strong>không</strong> yêu cầu quyền vị trí chạy nền và <strong>không</strong> ghi lại lịch sử di chuyển;</p><p class="point">d) Lớp bản đồ nền do thiết bị tải trực tiếp từ TrackAsia (<code>maps.track-asia.com</code>) và thư viện bản đồ tải từ <code>unpkg.com</code>; các bên này nhận địa chỉ IP và vùng bản đồ đang hiển thị, tức vị trí gần đúng của bạn khi bản đồ căn theo vị trí hiện tại;</p><p class="point">e) Ảnh tĩnh camera do thiết bị tải trực tiếp từ Notis (<code>api.notis.vn</code>); Notis nhận địa chỉ IP và mã camera bạn đang xem, từ đó có thể suy ra khu vực bạn quan tâm.</p></li><li><strong>Tra cứu phạt nguội</strong><p class="point">a) Dữ liệu: biển số xe và loại phương tiện bạn nhập;</p><p class="point">b) Mục đích: thực hiện lượt tra cứu do bạn yêu cầu;</p><p class="point">c) Cách thức: biển số được gửi qua HTTPS tới máy chủ của Ứng dụng (<code>POST /api/fines/check</code>), máy chủ chuyển tiếp tới dịch vụ tra cứu vi phạm giao thông của <strong>MoMo</strong> (<code>aws.momo.vn</code>). Kết quả được lưu đệm trong bộ nhớ máy chủ tối đa 05 phút để giảm tải; đối với lượt tra cứu trực tiếp (không bật theo dõi), máy chủ <strong>không lưu biển số hay kết quả thành hồ sơ</strong>;</p><p class="point">d) Lịch sử biển số đã tra cứu được lưu cục bộ trên thiết bị theo khoản 10 Điều này;</p><p class="point">e) Bạn chỉ được tra cứu biển số của phương tiện do mình sở hữu, sử dụng hợp pháp hoặc đã được chủ phương tiện đồng ý.</p></li><li><strong>Theo dõi phạt nguội tự động (chỉ khi bạn đồng ý rõ ràng)</strong><p class="point">a) Tính năng chỉ hoạt động khi bạn chủ động bật và đồng ý rõ ràng cho phép lưu biển số trên máy chủ. Nếu không đồng ý, biển số chỉ dùng cho lượt tra cứu trực tiếp theo khoản 2 Điều này;</p><p class="point">b) Dữ liệu lưu trên máy chủ: biển số xe, loại phương tiện, Mã cài đặt, push token của thiết bị, danh sách mã các vi phạm gần nhất của chính biển số đó (để so sánh, tránh thông báo trùng), báo cáo hằng ngày, thời điểm tạo/cập nhật và trạng thái lỗi kỹ thuật của lần tra gần nhất. Dữ liệu theo dõi gắn với Mã cài đặt, <strong>không gắn với Tài khoản</strong>. Không lưu vị trí hay hành trình cho tính năng này;</p><p class="point">c) Biển số, push token, danh sách mã vi phạm và báo cáo được mã hóa bằng thuật toán AES-256-GCM khi lưu trữ và chỉ được giải mã trong bộ nhớ khi tra cứu định kỳ hoặc gửi thông báo;</p><p class="point">d) Máy chủ tra cứu định kỳ (mặc định 1 lần/ngày cho mỗi biển số đang bật theo dõi) và chỉ gửi thông báo đẩy khi xuất hiện vi phạm mới so với lần tra trước. Lượt tra đầu tiên của biển mới đăng ký chỉ lập ảnh chụp ban đầu, không gửi thông báo cho các vi phạm đã có từ trước. Nội dung thông báo chỉ chứa biển số đã che (ví dụ "51A***45");</p><p class="point">e) Push token chỉ được chia sẻ với hạ tầng gửi thông báo (Expo Push Service, Firebase Cloud Messaging, Apple Push Notification service) đúng mức cần thiết; ngoại trừ việc gửi biển số tới MoMo để tra cứu như mô tả tại khoản 2 Điều này, dữ liệu theo dõi không được chia sẻ cho bất kỳ bên thứ ba nào khác;</p><p class="point">f) Bạn có thể tắt theo dõi từng biển số, hoặc rút lại đồng ý và xóa toàn bộ dữ liệu theo dõi của mình khỏi máy chủ bất cứ lúc nào tại mục Theo dõi phạt nguội trong Ứng dụng. Khi rút đồng ý, toàn bộ bản ghi theo dõi gắn với Mã cài đặt bị xóa khỏi máy chủ và việc tra cứu định kỳ chấm dứt.</p></li><li><strong>Quét biển số bằng camera</strong><p class="point">a) Dữ liệu: ảnh chụp từ camera thiết bị khi bạn chủ động bấm quét, chỉ sau khi bạn cấp quyền camera. Ứng dụng không truy cập thư viện ảnh;</p><p class="point">b) Cách thức: ảnh được nhận dạng ký tự <strong>ngay trên thiết bị</strong> bằng Google ML Kit; ảnh <strong>không được tải lên</strong> máy chủ của Ứng dụng hay bên thứ ba. Kết quả nhận dạng chỉ dùng để điền sẵn ô biển số;</p><p class="point">c) Ứng dụng gửi về máy chủ số liệu thống kê tổng hợp gồm số lượt quét, số lần bạn sửa kết quả và nền tảng (iOS/Android), không kèm ảnh hay biển số, nhằm cải thiện độ chính xác.</p></li><li><strong>Tài khoản (không bắt buộc)</strong><p class="point">a) Tài khoản chỉ cần thiết để mua, khôi phục và quản lý Gói Pro;</p><p class="point">b) Dữ liệu: khi bạn đăng nhập bằng Google hoặc Apple, Ứng dụng xử lý mã định danh người dùng (UID) do Firebase Authentication cấp, địa chỉ thư điện tử, nhà cung cấp đăng nhập và mã định danh tương ứng của nhà cung cấp. Đối với Sign in with Apple, Ứng dụng yêu cầu họ tên và thư điện tử (bạn có thể dùng tính năng ẩn thư điện tử của Apple) và lưu mã làm mới (refresh token) của Apple ở dạng mã hóa AES-256-GCM để thực hiện thu hồi khi bạn xóa Tài khoản;</p><p class="point">c) Máy chủ lưu: UID, thư điện tử, nhà cung cấp đăng nhập, mã định danh nhà cung cấp, trạng thái và thời điểm tạo/cập nhật. Họ tên và ảnh đại diện (nếu có) chỉ hiển thị trên thiết bị, không lưu trên máy chủ;</p><p class="point">d) Mục đích: xác thực, gắn quyền lợi Gói Pro với Tài khoản, khôi phục giao dịch, phòng chống gian lận và giải quyết khiếu nại.</p></li><li><strong>Gói Pro và thanh toán</strong><p class="point">a) Việc thanh toán do Apple hoặc Google thực hiện. Ứng dụng <strong>không</strong> thu thập, không lưu số thẻ hay thông tin tài khoản thanh toán của bạn;</p><p class="point">b) Ứng dụng sử dụng dịch vụ RevenueCat để quản lý thuê bao; UID Tài khoản được dùng làm mã người dùng tại RevenueCat. Máy chủ của Ứng dụng nhận và lưu thông tin giao dịch (mã giao dịch, sản phẩm, thời hạn, trạng thái gia hạn, hoàn tiền) để xác định quyền lợi Gói Pro;</p><p class="point">c) Khi Gói Pro có hiệu lực, Ứng dụng không hiển thị quảng cáo và không khởi chạy bộ công cụ quảng cáo.</p></li><li><strong>Quảng cáo</strong><p class="point">a) Phiên bản miễn phí hiển thị quảng cáo do Google AdMob cung cấp tại màn hình xem camera, danh sách camera và màn hình tra cứu phạt nguội;</p><p class="point">b) Trước khi tải quảng cáo, Ứng dụng hiển thị biểu mẫu chấp thuận của Google (User Messaging Platform) khi pháp luật hoặc chính sách của Google yêu cầu; trên iOS, Ứng dụng hỏi quyền theo dõi theo cơ chế App Tracking Transparency (ATT);</p><p class="point">c) Quảng cáo được cá nhân hóa <strong>chỉ khi</strong> bạn chấp thuận qua biểu mẫu của Google và (trên iOS) cho phép theo dõi qua ATT; trường hợp khác, Ứng dụng chỉ yêu cầu quảng cáo không cá nhân hóa;</p><p class="point">d) Google AdMob có thể xử lý mã định danh quảng cáo của thiết bị (IDFA trên iOS khi được phép; mã định danh quảng cáo Android), địa chỉ IP, thông tin thiết bị và tương tác với quảng cáo theo chính sách của Google. Ứng dụng không tự đọc, không lưu các mã định danh quảng cáo này;</p><p class="point">e) Bạn có thể thay đổi lựa chọn bằng cách tắt quyền theo dõi trong Cài đặt của iOS, đặt lại hoặc xóa mã định danh quảng cáo trên Android, hoặc mua Gói Pro.</p></li><li><strong>Thông báo đẩy</strong><p class="point">Ứng dụng chỉ đề nghị quyền thông báo và tạo push token khi bạn bật Theo dõi phạt nguội tự động. Bạn có thể tắt quyền thông báo trong Cài đặt của thiết bị; khi đó trạng thái vi phạm vẫn hiển thị trong Ứng dụng.</p></li><li><strong>Dữ liệu kỹ thuật và vận hành</strong><p class="point">a) Nhật ký truy cập máy chủ ghi nhận địa chỉ IP, thời điểm, đường dẫn yêu cầu (đã che tọa độ) và có thể bao gồm Mã cài đặt trong yêu cầu của tính năng Theo dõi phạt nguội; mục đích: vận hành, bảo đảm an ninh, chống lạm dụng và xử lý sự cố;</p><p class="point">b) Ứng dụng sử dụng Firebase Remote Config để nhận phiên bản tối thiểu cần cập nhật; không dùng để định danh hay theo dõi hành vi;</p><p class="point">c) Ứng dụng <strong>không</strong> tích hợp công cụ phân tích hành vi (analytics) hay báo cáo lỗi (crash reporting) của bên thứ ba; thư viện Firebase Analytics bị loại khỏi bản dựng.</p></li><li><strong>Dữ liệu lưu cục bộ trên thiết bị</strong><p class="point">a) Các dữ liệu sau chỉ lưu trên thiết bị, không gửi về máy chủ của Ứng dụng: lịch sử tra cứu biển số; danh sách camera yêu thích; tùy chọn giao diện và chu kỳ làm mới ảnh; khóa API bản đồ do bạn tự nhập (nếu có); bản ghi chấp thuận Điều khoản sử dụng (mã nội dung và thời điểm chấp thuận); trạng thái đồng ý Theo dõi phạt nguội; Mã cài đặt; bộ nhớ đệm ảnh thu nhỏ và cấu hình cập nhật;</p><p class="point">b) Tiện ích màn hình chính (widget) đọc ảnh chụp dữ liệu (biển số trong lịch sử tra cứu kèm tình trạng vi phạm, giá nhiên liệu) từ vùng lưu trữ dùng chung của Ứng dụng trên chính thiết bị; widget không tự kết nối mạng. Bạn có thể bật tùy chọn ẩn biển số trên widget.</p></li></ol>
+<h3>Điều 6. Dữ liệu Ứng dụng không thu thập</h3>
+<p>Ứng dụng không yêu cầu và không thu thập: số Căn cước/Căn cước công dân, hộ chiếu; số điện thoại; danh bạ; thư viện ảnh; nội dung tin nhắn; micrô; dữ liệu sinh trắc học; thông tin thẻ hoặc tài khoản ngân hàng; vị trí chạy nền; lịch sử di chuyển. Ứng dụng không chủ động thu thập dữ liệu cá nhân nhạy cảm theo quy định của pháp luật.</p>
+<h3>Điều 7. Hậu quả, thiệt hại không mong muốn có khả năng xảy ra</h3>
+<ol><li>Dữ liệu truyền qua Internet hoặc lưu trữ điện tử luôn tiềm ẩn rủi ro bị truy cập trái phép dù đã áp dụng biện pháp bảo vệ tại Điều 11.</li><li>Biển số xe trong lịch sử tra cứu và trên widget có thể bị người khác xem nếu thiết bị của bạn không được khóa màn hình.</li><li>Các bên thứ ba tải nội dung trực tiếp tới thiết bị (TrackAsia, Notis, Google AdMob) có thể suy ra vị trí gần đúng hoặc khu vực quan tâm của bạn từ địa chỉ IP và nội dung được yêu cầu.</li><li>Khi phát hiện sự cố vi phạm dữ liệu cá nhân, Bên kiểm soát và xử lý dữ liệu sẽ áp dụng biện pháp khắc phục, thông báo cho cơ quan có thẩm quyền và Người dùng bị ảnh hưởng theo thời hạn, trình tự pháp luật quy định.</li></ol>
+<h2>Chương III. CHIA SẺ, CHUYỂN GIAO VÀ LƯU TRỮ DỮ LIỆU</h2>
+<h3>Điều 8. Bên thứ ba nhận dữ liệu</h3>
+<div class="table-wrap"><table><thead><tr><th>Bên nhận</th><th>Dữ liệu</th><th>Mục đích</th></tr></thead><tbody><tr><td>MoMo (<code>aws.momo.vn</code>)</td><td>Biển số, loại phương tiện (gửi từ máy chủ, không kèm thông tin định danh Người dùng)</td><td>Tra cứu phạt nguội</td></tr><tr><td>Notis (<code>api.notis.vn</code>)</td><td>Địa chỉ IP, mã camera đang xem</td><td>Cung cấp ảnh tĩnh camera</td></tr><tr><td>TrackAsia (<code>maps.track-asia.com</code>), unpkg.com</td><td>Địa chỉ IP, vùng bản đồ hiển thị</td><td>Hiển thị bản đồ nền và lớp giao thông</td></tr><tr><td>Google (Firebase Authentication, Google Sign-In, Firebase Remote Config, Google AdMob/UMP, Firebase Cloud Messaging, ML Kit chạy trên thiết bị)</td><td>UID, thư điện tử, mã định danh quảng cáo, địa chỉ IP, thông tin thiết bị, push token</td><td>Đăng nhập, cấu hình, quảng cáo, gửi thông báo</td></tr><tr><td>Apple (Sign in with Apple, Apple Push Notification service, App Store)</td><td>Mã định danh Apple, thư điện tử (có thể ẩn), push token, giao dịch</td><td>Đăng nhập, thu hồi đăng nhập, thông báo, thanh toán</td></tr><tr><td>RevenueCat</td><td>UID Tài khoản, thông tin giao dịch</td><td>Quản lý thuê bao Gói Pro</td></tr><tr><td>Expo (<code>exp.host</code>)</td><td>Push token, nội dung thông báo (biển số đã che)</td><td>Gửi thông báo đẩy</td></tr><tr><td>Nhà cung cấp hạ tầng máy chủ</td><td>Toàn bộ dữ liệu lưu trên máy chủ ở dạng đã mã hóa theo Điều 5</td><td>Lưu trữ, vận hành máy chủ</td></tr></tbody></table></div>
+<p>Ngoài các trường hợp trên, dữ liệu chỉ được cung cấp cho cơ quan nhà nước có thẩm quyền khi có yêu cầu theo đúng trình tự, thủ tục pháp luật quy định.</p>
+<h3>Điều 9. Chuyển dữ liệu cá nhân ra nước ngoài</h3>
+<p>Một số bên nhận nêu tại Điều 8 (Google, Apple, RevenueCat, Expo, unpkg.com) có thể lưu trữ và xử lý dữ liệu tại máy chủ đặt ngoài lãnh thổ Việt Nam. Bằng việc sử dụng các tính năng tương ứng, bạn đồng ý với việc chuyển dữ liệu ra nước ngoài trong phạm vi cần thiết cho mục đích tại Điều 5. Bên kiểm soát và xử lý dữ liệu thực hiện các nghĩa vụ về chuyển dữ liệu cá nhân ra nước ngoài theo quy định của Luật Bảo vệ dữ liệu cá nhân và văn bản hướng dẫn.</p>
+<h3>Điều 10. Thời gian lưu trữ</h3>
+<ol><li>Tọa độ vị trí: chỉ tồn tại trong thời gian xử lý yêu cầu, không lưu trữ.</li><li>Biển số của lượt tra cứu trực tiếp: lưu đệm trong bộ nhớ máy chủ tối đa 05 phút.</li><li>Dữ liệu Theo dõi phạt nguội: lưu cho đến khi bạn tắt theo dõi biển số đó, rút đồng ý, hoặc yêu cầu xóa theo Điều 12.</li><li>Dữ liệu Tài khoản: lưu trong thời gian Tài khoản hoạt động. Khi bạn xóa Tài khoản, liên kết đăng nhập và quyền lợi Gói Pro bị gỡ bỏ, phiên đăng nhập Apple bị thu hồi; bản ghi tối thiểu gồm UID, thư điện tử, trạng thái đã xóa và lịch sử giao dịch được tiếp tục lưu giữ để giải quyết khiếu nại, hoàn tiền, phòng chống gian lận (ngăn một giao dịch được nhận quyền lợi hai lần) và thực hiện nghĩa vụ theo quy định của pháp luật. Bản ghi này được lưu cho đến khi bạn gửi yêu cầu xóa theo Điều 12 hoặc theo yêu cầu của cơ quan nhà nước có thẩm quyền, trừ trường hợp pháp luật bắt buộc phải tiếp tục lưu giữ.</li><li>Nhật ký kỹ thuật và nhật ký quản trị (trong đó biển số đã được che, Mã cài đặt đã được rút gọn): lưu trong thời gian cần thiết cho mục đích vận hành, bảo đảm an ninh và giải quyết sự cố.</li><li>Dữ liệu lưu cục bộ: lưu cho đến khi bạn tự xóa trong Ứng dụng, xóa dữ liệu ứng dụng trong cài đặt thiết bị hoặc gỡ cài đặt Ứng dụng.</li><li>Dữ liệu do bên thứ ba xử lý: theo chính sách lưu trữ của bên thứ ba đó.</li></ol>
+<h3>Điều 11. Biện pháp bảo vệ dữ liệu</h3>
+<ol><li>Mọi kết nối giữa Ứng dụng và máy chủ sử dụng giao thức mã hóa HTTPS (TLS).</li><li>Biển số, push token và dữ liệu Theo dõi phạt nguội, mã làm mới của Apple được mã hóa AES-256-GCM khi lưu trữ; máy chủ không khởi động nếu thiếu khóa mã hóa.</li><li>Nhật ký truy cập che tọa độ vị trí và loại bỏ tiêu đề xác thực; nhật ký quản trị chỉ lưu biển số đã che.</li><li>Máy chủ áp dụng xác thực, phân quyền quản trị, ghi nhật ký thao tác quản trị và giới hạn tần suất yêu cầu (rate-limiting) để ngăn chặn khai thác, truy quét dữ liệu trái phép.</li><li>Việc xem biển số đầy đủ trong khu vực quản trị chỉ dành cho chủ sở hữu, bắt buộc ghi lý do và được ghi nhật ký.</li></ol>
+<h2>Chương IV. QUYỀN CỦA CHỦ THỂ DỮ LIỆU</h2>
+<h3>Điều 12. Quyền của bạn và cách thực hiện</h3>
+<ol><li>Theo quy định của pháp luật về bảo vệ dữ liệu cá nhân, bạn có các quyền: được biết về hoạt động xử lý dữ liệu; đồng ý hoặc không đồng ý; rút lại sự đồng ý; xem, chỉnh sửa hoặc yêu cầu chỉnh sửa; yêu cầu cung cấp; yêu cầu xóa; hạn chế xử lý; phản đối xử lý; khiếu nại, tố cáo, khởi kiện; yêu cầu bồi thường thiệt hại; tự bảo vệ và các quyền khác theo quy định của pháp luật.</li><li>Cách thực hiện trực tiếp trong Ứng dụng:<p class="point">a) Thu hồi quyền vị trí, camera, thông báo, theo dõi quảng cáo trong Cài đặt của thiết bị; các tính năng không phụ thuộc quyền đó vẫn hoạt động;</p><p class="point">b) Xóa lịch sử tra cứu tại màn hình tra cứu phạt nguội; bỏ camera yêu thích tại danh sách camera;</p><p class="point">c) Tắt theo dõi từng biển số, hoặc rút đồng ý và xóa toàn bộ dữ liệu theo dõi tại mục Theo dõi phạt nguội;</p><p class="point">d) Đăng xuất hoặc xóa Tài khoản tại màn hình Cài đặt. Việc xóa Tài khoản <strong>không</strong> tự động hủy gia hạn Gói Pro trên App Store hoặc Google Play và <strong>không</strong> xóa dữ liệu Theo dõi phạt nguội (gắn với Mã cài đặt) — bạn cần thực hiện riêng theo điểm c khoản này;</p><p class="point">e) Xóa toàn bộ dữ liệu lưu cục bộ bằng cách xóa dữ liệu ứng dụng hoặc gỡ cài đặt Ứng dụng.</p></li><li>Đối với các yêu cầu khác (cung cấp bản sao dữ liệu, xóa dữ liệu trên máy chủ, hạn chế, phản đối xử lý), bạn gửi yêu cầu tới thư điện tử tại Điều 3, nêu rõ nội dung yêu cầu và thông tin giúp xác định dữ liệu (thư điện tử Tài khoản hoặc biển số đã đăng ký theo dõi). Yêu cầu được tiếp nhận, xác minh và giải quyết trong thời hạn pháp luật quy định.</li><li>Việc rút lại sự đồng ý không ảnh hưởng tới tính hợp pháp của việc xử lý đã thực hiện trước đó. Một số tính năng có thể không hoạt động khi bạn rút đồng ý hoặc yêu cầu xóa dữ liệu cần thiết cho tính năng đó.</li></ol>
+<h3>Điều 13. Dữ liệu cá nhân của trẻ em</h3>
+<p>Ứng dụng không hướng tới trẻ em dưới 16 tuổi và không cố ý thu thập dữ liệu cá nhân của trẻ em. Việc trẻ em sử dụng các tính năng có xử lý dữ liệu cá nhân (đăng nhập, mua Gói Pro, Theo dõi phạt nguội) phải có sự đồng ý của cha, mẹ hoặc người giám hộ theo quy định của pháp luật. Trường hợp phát hiện dữ liệu của trẻ em được xử lý không đúng quy định, dữ liệu đó sẽ được xóa không chậm trễ.</p>
+<h2>Chương V. ĐIỀU KHOẢN THI HÀNH</h2>
+<h3>Điều 14. Sửa đổi, bổ sung Chính sách</h3>
+<ol><li>Chính sách này có thể được sửa đổi, bổ sung khi Ứng dụng thay đổi cách thức xử lý dữ liệu, khi chính sách của nền tảng hoặc quy định pháp luật thay đổi.</li><li>Bản sửa đổi được công bố tại địa chỉ công bố của văn bản kèm mã định danh nội dung và ngày hiệu lực mới <strong>trước</strong> khi phiên bản Ứng dụng tương ứng được phát hành.</li><li>Đối với thay đổi trọng yếu (thêm loại dữ liệu, thêm mục đích hoặc bên nhận dữ liệu), Ứng dụng yêu cầu bạn xem và chấp thuận lại trước khi tiếp tục sử dụng.</li></ol>
+<h3>Điều 15. Hiệu lực và liên hệ</h3>
+<ol><li>Chính sách này có hiệu lực kể từ ngày 15/11/2026 và thay thế Chính sách bảo mật phiên bản 1.0.</li><li>Mọi câu hỏi, yêu cầu hoặc khiếu nại liên quan đến dữ liệu cá nhân xin gửi về: <strong>Lê Văn Long (Longkunz)</strong> — thư điện tử <a href="mailto:mrlongdeveloper@gmail.com">mrlongdeveloper@gmail.com</a>.</li></ol>
+    </main>
     <footer>
-      <p>© 2026 Giao Thông VN Live. Tài liệu lưu trữ công khai trên GitHub Pages.</p>
-      <p>Mã định danh nội dung: <strong>giao-thong-vn-privacy-v1-official</strong></p>
-      <p><a href="terms.html">Điều khoản sử dụng</a> • <a href="contact.html">Liên hệ &amp; Góp ý</a></p>
+      <p>Mã định danh nội dung: <strong id="content-id">giao-thong-vn-privacy-v2-official</strong> · Ngày hiệu lực: <strong>2026-11-15</strong></p>
+      <p><a href="terms.html">Điều khoản sử dụng</a> · <a href="contact.html">Liên hệ</a> · <a href="mailto:mrlongdeveloper@gmail.com">mrlongdeveloper@gmail.com</a></p>
+      <p>© 2026 Lê Văn Long (Longkunz). Bảo lưu mọi quyền.</p>
     </footer>
   </div>
 </body>
